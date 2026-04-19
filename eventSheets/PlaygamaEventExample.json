@@ -1,0 +1,4025 @@
+{
+	"name": "PlaygamaEventExample",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "isLocalStorage",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "true mean internal storage, false mean platform storage",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 813632949559089
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Platform Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 322211573314596
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "PlatformIDLabel",
+							"sid": 963189928695110,
+							"parameters": {
+								"text": "PlaygamaBridge.PlatformId"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "LanguageLabel",
+							"sid": 698591248123345,
+							"parameters": {
+								"text": "PlaygamaBridge.PlatformLanguage"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "PayloadLabel",
+							"sid": 818425384570627,
+							"parameters": {
+								"text": "\"\"&PlaygamaBridge.PlatformPayload"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TLDLabel",
+							"sid": 641599570213691,
+							"parameters": {
+								"text": "PlaygamaBridge.PlatformTld"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "SendGameReadyBtn",
+							"sid": 204655045755929,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelStartBtn",
+							"sid": 949463271532452,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelCompleteBtn",
+							"sid": 202306791314762,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelFailBtn",
+							"sid": 952499804773384,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelPauseBtn",
+							"sid": 611099597475041,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelResumeBtn",
+							"sid": 957785363231073,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 854185379415770,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-platform-audio-enabled",
+									"objectClass": "PlaygamaBridge",
+									"sid": 613131214561191
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "AudioStateLabel",
+									"sid": 656683658127402,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 429934839586067
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-platform-get-all-games-supported",
+									"objectClass": "PlaygamaBridge",
+									"sid": 966497639592955
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "IsGetAllGamesSupportedLabel",
+									"sid": 747081800059200,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 510766459086100
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-platform-get-game-by-id-supported",
+									"objectClass": "PlaygamaBridge",
+									"sid": 142094255506247
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "IsGetGameByIDSupportedLabel",
+									"sid": 807341869520040,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 297920984486929
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-platform-audio-state-changed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 589842646410453
+						}
+					],
+					"actions": [],
+					"sid": 571900544594009,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-platform-audio-enabled",
+									"objectClass": "PlaygamaBridge",
+									"sid": 455284441857704
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "AudioStateLabel",
+									"sid": 866510534156348,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 175206535824450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-platform-audio-enabled",
+									"objectClass": "PlaygamaBridge",
+									"sid": 480202064841003,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "AudioStateLabel",
+									"sid": 440988282461255,
+									"parameters": {
+										"text": "\"false\""
+									}
+								}
+							],
+							"sid": 757602442292027
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 627368259699390,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetServerTimeBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-server-time",
+							"objectClass": "PlaygamaBridge",
+							"sid": 550689977583047
+						}
+					],
+					"sid": 275163693724062
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 587586267021508
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-get-server-time-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 319916802480361
+						}
+					],
+					"actions": [],
+					"sid": 787665531731621,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-server-time",
+									"objectClass": "PlaygamaBridge",
+									"sid": 807960267861649
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "ServerTimeLabel",
+									"sid": 490560882523196,
+									"parameters": {
+										"text": "Date.ToString(PlaygamaBridge.ServerTime)"
+									}
+								}
+							],
+							"sid": 346353093270327
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 285533762386844,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetAllGamesBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-all-games",
+							"objectClass": "PlaygamaBridge",
+							"sid": 168825550819806
+						}
+					],
+					"sid": 566226578443404
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-get-all-games-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 106120110399772
+						}
+					],
+					"actions": [],
+					"sid": 937583534606109,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 892020985961371,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PlatformAllGamesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 949120303318305,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 722111971721060,
+											"parameters": {
+												"name": "\"games\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.PlatformAllGamesCount-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 544706813302338,
+											"parameters": {
+												"type": "log",
+												"message": "\"App ID:\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"appID\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 330544634173451,
+											"parameters": {
+												"type": "log",
+												"message": "\"Title:\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"title\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 601647768590742,
+											"parameters": {
+												"type": "log",
+												"message": "\"Url:\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"url\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 699637087524036,
+											"parameters": {
+												"type": "log",
+												"message": "\"Cover URL:\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"coverURL\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 468189664422514,
+											"parameters": {
+												"type": "log",
+												"message": "\"Icon URL:\" & PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"games\"), \"iconURL\")"
+											}
+										}
+									],
+									"sid": 280665318730303
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 253373742110665,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetGameByIDBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 944683007426466,
+							"parameters": {
+								"key": "\"gameId\"",
+								"value": "GameIDInput.Text"
+							}
+						},
+						{
+							"id": "get-game-by-id",
+							"objectClass": "PlaygamaBridge",
+							"sid": 425816155366455
+						}
+					],
+					"sid": 583975031916485
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-get-game-by-id-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 247034207445873
+						}
+					],
+					"actions": [],
+					"sid": 962187932610724,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 945639294028420
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 640751471837847,
+									"parameters": {
+										"type": "log",
+										"message": "\"AppID:\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"appID\")"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 237298636603934,
+									"parameters": {
+										"type": "log",
+										"message": "\"Title:\" & PlaygamaBridge.PlatformGameByIdPropertyValue( \"title\")"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 717300753555256,
+									"parameters": {
+										"type": "log",
+										"message": "\"URL:\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"url\")"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 922699078927439,
+									"parameters": {
+										"type": "log",
+										"message": "\"Cover URL:\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"coverURL\")"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 697759521699925,
+									"parameters": {
+										"type": "log",
+										"message": "\"Icon URL:\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"iconURL\")"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 735534078068345,
+									"parameters": {
+										"type": "log",
+										"message": "\"Is Available:\" & PlaygamaBridge.PlatformGameByIdPropertyValue(\"isAvailable\")"
+									}
+								}
+							],
+							"sid": 663387308077496
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 293511461028737,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "SendGameReadyBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 565526245757940,
+							"parameters": {
+								"message": "game-ready"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "SendGameReadyBtn",
+							"sid": 287227074667679,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelStartBtn",
+							"sid": 554418584811382,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 563553808131843
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 985240211199958,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LevelStartBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 946629871367497,
+							"parameters": {
+								"message": "level-started"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelStartBtn",
+							"sid": 538007072224162,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelCompleteBtn",
+							"sid": 324354214802839,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelFailBtn",
+							"sid": 724904382965912,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelPauseBtn",
+							"sid": 755410695704083,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 271172427915807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 107304976206771,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LevelCompleteBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 646744785864377,
+							"parameters": {
+								"message": "level-completed"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelCompleteBtn",
+							"sid": 261323017450106,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelStartBtn",
+							"sid": 457680570962085,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelFailBtn",
+							"sid": 677106600054213,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelPauseBtn",
+							"sid": 214110196725413,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 314453692584412
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 952708742844464,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LevelFailBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 806472607580164,
+							"parameters": {
+								"message": "level-failed"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelFailBtn",
+							"sid": 409021259150897,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelCompleteBtn",
+							"sid": 820785963940998,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelStartBtn",
+							"sid": 225874508734397,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelPauseBtn",
+							"sid": 783329032841477,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 853135492612578
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 696852369317432,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "SendAchievementBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 455736160021900,
+							"parameters": {
+								"message": "player-got-achievement"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "SendAchievementBtn",
+							"sid": 481717655830878,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 223078729343247
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 420105632285709,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LevelPauseBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 909742777877109,
+							"parameters": {
+								"message": "level-paused"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelPauseBtn",
+							"sid": 543714541946756,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelResumeBtn",
+							"sid": 396971243402630,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 589451179485700
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 553574312709922,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LevelResumeBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-message",
+							"objectClass": "PlaygamaBridge",
+							"sid": 965646410779536,
+							"parameters": {
+								"message": "level-resumed"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelResumeBtn",
+							"sid": 445449105794774,
+							"parameters": {
+								"animation": "\"Disable\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LevelPauseBtn",
+							"sid": 162858225686993,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 448031593116445
+				}
+			],
+			"sid": 266359528468795
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Device Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 449809718961327
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "DeviceTypeLabel",
+							"sid": 329818246864255,
+							"parameters": {
+								"text": "PlaygamaBridge.DeviceType"
+							}
+						}
+					],
+					"sid": 181682643053106
+				}
+			],
+			"sid": 536519350814350
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-visibility-state-changed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 864832194223348
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "LastVisibilityLabel",
+							"sid": 340092584623180,
+							"parameters": {
+								"text": "CurrentVisibilityLabel.Text"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "CurrentVisibilityLabel",
+							"sid": 335080066160378,
+							"parameters": {
+								"text": "PlaygamaBridge.VisibilityState"
+							}
+						}
+					],
+					"sid": 525297574697909
+				}
+			],
+			"sid": 828087321094044
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Storage Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "ShowStorageStatus",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 102155677772368,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-storage-supported",
+									"objectClass": "PlaygamaBridge",
+									"sid": 556775600171467,
+									"parameters": {
+										"storage-type": "local-storage"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "LocalStorageSupportLabel",
+									"sid": 590641839762112,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 550792279324811
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-storage-available",
+									"objectClass": "PlaygamaBridge",
+									"sid": 766673010120735,
+									"parameters": {
+										"storage-type": "local-storage"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "LocalStorageAvailableLabel",
+									"sid": 937337264536245,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 928277030284638
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-storage-available",
+									"objectClass": "PlaygamaBridge",
+									"sid": 914067803743138,
+									"parameters": {
+										"storage-type": "local-storage"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "LocalStorageAvailableLabel",
+									"sid": 933279519083804,
+									"parameters": {
+										"text": "\"false\""
+									}
+								}
+							],
+							"sid": 914550696388749
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-storage-supported",
+									"objectClass": "PlaygamaBridge",
+									"sid": 813122301533904,
+									"parameters": {
+										"storage-type": "platform-internal"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "PlatformInternalSupportLabel",
+									"sid": 253732688293841,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 444402354205062
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-storage-available",
+									"objectClass": "PlaygamaBridge",
+									"sid": 372860671216745,
+									"parameters": {
+										"storage-type": "platform-internal"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "PlatformInternalAvailableLabel",
+									"sid": 806390095010997,
+									"parameters": {
+										"text": "\"true\""
+									}
+								}
+							],
+							"sid": 506814945921447
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-storage-available",
+									"objectClass": "PlaygamaBridge",
+									"sid": 967202756387345,
+									"parameters": {
+										"storage-type": "platform-internal"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "PlatformInternalAvailableLabel",
+									"sid": 621254254413294,
+									"parameters": {
+										"text": "\"false\""
+									}
+								}
+							],
+							"sid": 516248847120276
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 145065211199882
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "DefaultStorageTypeLabel",
+							"sid": 938346428974536,
+							"parameters": {
+								"text": "PlaygamaBridge.DefaultStorageType"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LocalStorageRadioBtn",
+							"sid": 748172019481532,
+							"parameters": {
+								"animation": "\"Active\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"callFunction": "ShowStorageStatus",
+							"sid": 130969137228179
+						}
+					],
+					"sid": 396133558184971
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 759840634369909,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LoadDataBtn"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 883981148832833,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 836204120151600,
+									"parameters": {
+										"variable": "isLocalStorage"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-storage-data-get-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 781165589982891,
+									"parameters": {
+										"key": "\"coin\""
+									}
+								},
+								{
+									"id": "append-storage-data-get-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 308924561362971,
+									"parameters": {
+										"key": "\"level\""
+									}
+								},
+								{
+									"id": "send-storage-data-get-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 682865331841099,
+									"parameters": {
+										"storage-type": "local-storage"
+									}
+								}
+							],
+							"sid": 235124148781173
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 925535503077036,
+									"parameters": {
+										"variable": "isLocalStorage"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "append-storage-data-get-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 155639076068497,
+									"parameters": {
+										"key": "\"coin\""
+									}
+								},
+								{
+									"id": "append-storage-data-get-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 597932475944087,
+									"parameters": {
+										"key": "\"level\""
+									}
+								},
+								{
+									"id": "send-storage-data-get-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 271218189341794,
+									"parameters": {
+										"storage-type": "platform-internal"
+									}
+								}
+							],
+							"sid": 902438146485255
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-storage-data-get-request-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 502739393007202
+						}
+					],
+					"actions": [],
+					"sid": 400713137052889,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-storage-data",
+									"objectClass": "PlaygamaBridge",
+									"sid": 660732924065846,
+									"parameters": {
+										"key": "\"coin\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 173476525549952,
+									"parameters": {
+										"type": "log",
+										"message": "PlaygamaBridge.StorageData(\"coin\")"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 933764673175263,
+									"parameters": {
+										"type": "log",
+										"message": "PlaygamaBridge.StorageData(\"level\")"
+									}
+								}
+							],
+							"sid": 156776912965589
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 945997760139241,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "SaveDataBtn"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 925167835270949,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 361842221719460,
+									"parameters": {
+										"variable": "isLocalStorage"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-storage-data-set-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 976344750109849,
+									"parameters": {
+										"key": "\"coin\"",
+										"value": "CoinCountInput.Text"
+									}
+								},
+								{
+									"id": "append-storage-data-set-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 281330173800349,
+									"parameters": {
+										"key": "\"level\"",
+										"value": "LevelIdInput.Text"
+									}
+								},
+								{
+									"id": "send-storage-data-set-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 845563152833397,
+									"parameters": {
+										"storage-type": "local-storage"
+									}
+								}
+							],
+							"sid": 781212256319983
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 573682433921728,
+									"parameters": {
+										"variable": "isLocalStorage"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "append-storage-data-set-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 222516010436756,
+									"parameters": {
+										"key": "\"coin\"",
+										"value": "CoinCountInput.Text"
+									}
+								},
+								{
+									"id": "append-storage-data-set-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 386366133624720,
+									"parameters": {
+										"key": "\"level\"",
+										"value": "LevelIdInput.Text"
+									}
+								},
+								{
+									"id": "send-storage-data-set-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 605032865659611,
+									"parameters": {
+										"storage-type": "platform-internal"
+									}
+								}
+							],
+							"sid": 371123447692584
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-storage-data-set-request-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 703400602231202
+						}
+					],
+					"actions": [],
+					"sid": 996494747057597,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 272374959402121
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 725759612461790,
+									"parameters": {
+										"type": "log",
+										"message": "\"Set data completed\""
+									}
+								},
+								{
+									"callFunction": "ShowStorageStatus",
+									"sid": 233933557136136
+								}
+							],
+							"sid": 708522212853268
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 655409841645073,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "DeleteDataBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-storage-data-delete-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 385139920109542,
+							"parameters": {
+								"key": "\"coin\""
+							}
+						},
+						{
+							"id": "append-storage-data-delete-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 116983281806373,
+							"parameters": {
+								"key": "\"level\""
+							}
+						},
+						{
+							"id": "send-storage-data-delete-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 345115927074114,
+							"parameters": {
+								"storage-type": "default"
+							}
+						}
+					],
+					"sid": 566580235278306,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 330902420640752,
+									"parameters": {
+										"variable": "isLocalStorage"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "append-storage-data-delete-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 285544899176673,
+									"parameters": {
+										"key": "\"coin\""
+									}
+								},
+								{
+									"id": "append-storage-data-delete-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 625844319818076,
+									"parameters": {
+										"key": "\"level\""
+									}
+								},
+								{
+									"id": "send-storage-data-delete-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 612153506743446,
+									"parameters": {
+										"storage-type": "local-storage"
+									}
+								}
+							],
+							"sid": 930223572411790
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 670919830147135,
+									"parameters": {
+										"variable": "isLocalStorage"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "append-storage-data-delete-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 492535863776821,
+									"parameters": {
+										"key": "\"coin\""
+									}
+								},
+								{
+									"id": "append-storage-data-delete-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 523556128069163,
+									"parameters": {
+										"key": "\"level\""
+									}
+								},
+								{
+									"id": "send-storage-data-delete-request",
+									"objectClass": "PlaygamaBridge",
+									"sid": 514420234964565,
+									"parameters": {
+										"storage-type": "platform-internal"
+									}
+								}
+							],
+							"sid": 830799690288691
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-storage-data-delete-request-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 617592903517638
+						}
+					],
+					"actions": [],
+					"sid": 291154535770204,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 490189164561808
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 287115274903879,
+									"parameters": {
+										"type": "log",
+										"message": "\"Delete Data Completed\""
+									}
+								},
+								{
+									"callFunction": "ShowStorageStatus",
+									"sid": 310138356596470
+								}
+							],
+							"sid": 757405401131265
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 356211917001941,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "LocalStorageRadioBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "LocalStorageRadioBtn",
+							"sid": 394329711518192,
+							"parameters": {
+								"animation": "\"Active\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "PlatformStorageRadioBtn",
+							"sid": 544999930222901,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 985616440178267,
+							"parameters": {
+								"variable": "isLocalStorage",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 379185350309979
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 542695802441703,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "PlatformStorageRadioBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlatformStorageRadioBtn",
+							"sid": 211378293106677,
+							"parameters": {
+								"animation": "\"Active\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "LocalStorageRadioBtn",
+							"sid": 783342734534134,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 568943526182940,
+							"parameters": {
+								"variable": "isLocalStorage",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 152878281953981
+				}
+			],
+			"sid": 858706323590865
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Advertisements Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 216692547715418
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "BannerStateLabel",
+							"sid": 475604768369870,
+							"parameters": {
+								"text": "PlaygamaBridge.BannerState"
+							}
+						},
+						{
+							"id": "set-minimum-delay-between-interstitial",
+							"objectClass": "PlaygamaBridge",
+							"sid": 159773681881073,
+							"parameters": {
+								"seconds": "60"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "InterstitialStateLabel",
+							"sid": 937881691020605,
+							"parameters": {
+								"text": "PlaygamaBridge.InterstitialState"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "InterstitialDelayLabel",
+							"sid": 369772004343567,
+							"parameters": {
+								"text": "\"60\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "RewardStateLabel",
+							"sid": 522510370420110,
+							"parameters": {
+								"text": "PlaygamaBridge.RewardedState"
+							}
+						}
+					],
+					"sid": 345569264952594
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 244521203255526,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ShowBannerBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "show-banner",
+							"objectClass": "PlaygamaBridge",
+							"sid": 870461690222077,
+							"parameters": {
+								"position": "bottom",
+								"placement": "\"Banner\""
+							}
+						}
+					],
+					"sid": 648198358757680
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-banner-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 105953697742694
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "BannerSupportLabel",
+							"sid": 115973587554744,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 204590850076343
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-banner-state-changed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 372971826532218
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "BannerStateLabel",
+							"sid": 975898058338664,
+							"parameters": {
+								"text": "PlaygamaBridge.BannerState"
+							}
+						}
+					],
+					"sid": 847560693924840
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 487597536494152,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "HideBannerBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "hide-banner",
+							"objectClass": "PlaygamaBridge",
+							"sid": 221370723109557
+						}
+					],
+					"sid": 541370261358088
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-interstitial-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 705043969356081
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "InterstitialSupportLabel",
+							"sid": 210322079634909,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 842299709451415
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-interstitial-state-changed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 102825298063139
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "InterstitialStateLabel",
+							"sid": 465494544579267,
+							"parameters": {
+								"text": "PlaygamaBridge.InterstitialState"
+							}
+						}
+					],
+					"sid": 787248187145434
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 629673130379361,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ShowInterstitialBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "show-interstitial",
+							"objectClass": "PlaygamaBridge",
+							"sid": 164328857293416,
+							"parameters": {
+								"placement": "\"interstitial\""
+							}
+						}
+					],
+					"sid": 358319094973521
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-rewarded-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 171690919213560
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RewardSupportLabel",
+							"sid": 348338652616588,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 600006557873632
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-rewarded-state-changed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 389501858284482
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RewardStateLabel",
+							"sid": 598821636997177,
+							"parameters": {
+								"text": "PlaygamaBridge.RewardedState"
+							}
+						}
+					],
+					"sid": 952112553209180
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-rewarded-rewarded",
+							"objectClass": "PlaygamaBridge",
+							"sid": 996306683692080
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RewardPlacementLabel",
+							"sid": 763567114685324,
+							"parameters": {
+								"text": "PlaygamaBridge.RewardedPlacement"
+							}
+						}
+					],
+					"sid": 399043316571029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 997916155624922,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ShowRewardBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "show-rewarded",
+							"objectClass": "PlaygamaBridge",
+							"sid": 425079174408315,
+							"parameters": {
+								"placement": "\"reward\""
+							}
+						}
+					],
+					"sid": 776199519251018
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 591746641785400,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "CheckAdBlockBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "check-adblock",
+							"objectClass": "PlaygamaBridge",
+							"sid": 411974735101711
+						}
+					],
+					"sid": 873552361670015,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-adblock-detected",
+									"objectClass": "PlaygamaBridge",
+									"sid": 720715373958771,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "AdBlockLabel",
+									"sid": 824830180491302,
+									"parameters": {
+										"text": "\"Not Detected\""
+									}
+								}
+							],
+							"sid": 318762468343916
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-adblock-detected",
+									"objectClass": "PlaygamaBridge",
+									"sid": 223275657859949
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "AdBlockLabel",
+									"sid": 825338375079215,
+									"parameters": {
+										"text": "\"Detected\""
+									}
+								}
+							],
+							"sid": 660967014138075
+						}
+					]
+				}
+			],
+			"sid": 606811388003725
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-player-authorization-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 932176749106507
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "AuthSupportLabel",
+							"sid": 744188022244385,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 920235185095503
+				},
+				{
+					"functionName": "ShowPlayerInformation",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "AuthStateLabel",
+							"sid": 436454158083447,
+							"parameters": {
+								"text": "\"Authorized\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "PlayerIdLabel",
+							"sid": 533788649274773,
+							"parameters": {
+								"text": "PlaygamaBridge.PlayerId"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "PlayerNameLabel",
+							"sid": 560570307133459,
+							"parameters": {
+								"text": "PlaygamaBridge.PlayerName"
+							}
+						}
+					],
+					"sid": 616838608264929
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-player-authorized",
+							"objectClass": "PlaygamaBridge",
+							"sid": 991442864501653
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowPlayerInformation",
+							"sid": 824731870029110
+						}
+					],
+					"sid": 453659981176591
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 687661843360912,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "AuthBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "authorize-player",
+							"objectClass": "PlaygamaBridge",
+							"sid": 626588545638791
+						}
+					],
+					"sid": 220421442039029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-authorize-player-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 496298697674066
+						}
+					],
+					"actions": [],
+					"sid": 684131185326161,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 845913539827857
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ShowPlayerInformation",
+									"sid": 297006126438036
+								}
+							],
+							"sid": 289616614410520,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "does-player-have-photo",
+											"objectClass": "PlaygamaBridge",
+											"sid": 193551900384088,
+											"parameters": {
+												"index": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "load-image-from-url",
+											"objectClass": "Avatar",
+											"sid": 830024174864199,
+											"parameters": {
+												"uri": "PlaygamaBridge.PlayerPhoto(0)",
+												"size": "keep-current-size",
+												"cross-origin": "anonymous"
+											}
+										}
+									],
+									"sid": 567352194740250
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 220770684072348
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Social Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-share-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 540625365218444
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "ShareSupportLabel",
+							"sid": 474295938140025,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 493884866712484
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 695935019966183,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ShareBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 567643901924033,
+							"parameters": {
+								"key": "\"text\"",
+								"value": "\"Hello\""
+							}
+						},
+						{
+							"id": "share",
+							"objectClass": "PlaygamaBridge",
+							"sid": 610654487514004
+						}
+					],
+					"sid": 404066325280133
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-share-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 752204219886007
+						}
+					],
+					"actions": [],
+					"sid": 315616242579526,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 154903995065558
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 607534355658031,
+									"parameters": {
+										"type": "log",
+										"message": "\"Share completed\""
+									}
+								}
+							],
+							"sid": 448983053171771
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-join-community-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 896972833752318
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "JoinCommunitySupportLabel",
+							"sid": 529657486638116,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 612487957490755
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 381853834388339,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "JoinBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 149775251796383,
+							"parameters": {
+								"key": "\"groupId\"",
+								"value": "\"GROUP_ID\""
+							}
+						},
+						{
+							"id": "join-community",
+							"objectClass": "PlaygamaBridge",
+							"sid": 512003614602593
+						}
+					],
+					"sid": 676569250280841
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-join-community-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 222347157446493
+						}
+					],
+					"actions": [],
+					"sid": 333276125525150,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 165418679652726
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 826786050795537,
+									"parameters": {
+										"type": "log",
+										"message": "\"Join community Completed\""
+									}
+								}
+							],
+							"sid": 851116451016032
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-add-to-favorites-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 157621437732077
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "AddFavouritesSupportLabel",
+							"sid": 138453494602169,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 115881086135840
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 292518743151066,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "FavouriteBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-favorites",
+							"objectClass": "PlaygamaBridge",
+							"sid": 411411298163564
+						}
+					],
+					"sid": 377329541602447
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-add-to-favorites-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 727848224268020
+						}
+					],
+					"actions": [],
+					"sid": 959476703435107,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 944027088943382
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 208066974157409,
+									"parameters": {
+										"type": "log",
+										"message": "\"Favourite added successfuly.\""
+									}
+								}
+							],
+							"sid": 341585170950700
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-add-to-home-screen-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 539210237861076
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "AddHomeSupportLabel",
+							"sid": 829594873840862,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 525503725153707
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 859013353195045,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "HomeBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-home-screen",
+							"objectClass": "PlaygamaBridge",
+							"sid": 490672760857430
+						}
+					],
+					"sid": 492431932884532
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-add-to-home-screen-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 605281256607634
+						}
+					],
+					"actions": [],
+					"sid": 407947158413123,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 304817694354202
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 451773762280625,
+									"parameters": {
+										"type": "log",
+										"message": "\"Home added successfuly.\""
+									}
+								}
+							],
+							"sid": 652316713069789
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-invite-friends-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 339262714349893
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "FriendSupportLabel",
+							"sid": 606615618501144,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 915915551662126
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 474002445810546,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "InviteBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 240997001544005,
+							"parameters": {
+								"key": "\"text\"",
+								"value": "\"Hello\""
+							}
+						},
+						{
+							"id": "invite-friends",
+							"objectClass": "PlaygamaBridge",
+							"sid": 686969673717407
+						}
+					],
+					"sid": 433152999266945
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-invite-friends-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 339269017708295
+						}
+					],
+					"actions": [],
+					"sid": 374595627483231,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 765698022725250
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 861741511807051,
+									"parameters": {
+										"type": "log",
+										"message": "\"Invite Friends Successfully\""
+									}
+								}
+							],
+							"sid": 108232449528299
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-create-post-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 346960679258564
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "PostSupportLabel",
+							"sid": 870254324788351,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 879496804595132
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 229820339951459,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "PostBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 960313682976336,
+							"parameters": {
+								"key": "\"media.0.type\"",
+								"value": "\"text\""
+							}
+						},
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 875530692373921,
+							"parameters": {
+								"key": "\"media.0.text\"",
+								"value": "\"Playgama Website\""
+							}
+						},
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 166410764354681,
+							"parameters": {
+								"key": "\"media.1.type\"",
+								"value": "\"link\""
+							}
+						},
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 323150653521023,
+							"parameters": {
+								"key": "\"media.1.url\"",
+								"value": "\"https://playgama.com/\""
+							}
+						},
+						{
+							"id": "create-post",
+							"objectClass": "PlaygamaBridge",
+							"sid": 161019491611411
+						}
+					],
+					"sid": 809126207834683
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-create-post-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 651756677321230
+						}
+					],
+					"actions": [],
+					"sid": 878551620596530,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 581351046493913
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 968769079552949,
+									"parameters": {
+										"type": "log",
+										"message": "\"Create Post Completed\""
+									}
+								}
+							],
+							"sid": 804914448560970
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-external-links-allowed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 115229370708186
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "LinkSupportLabel",
+							"sid": 253109574971833,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 227286460764502
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-rate-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 981971792268217
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RateSupportLabel",
+							"sid": 844863391900261,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 631244106603496
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 766892346583997,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "RateBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rate",
+							"objectClass": "PlaygamaBridge",
+							"sid": 637795741935416
+						}
+					],
+					"sid": 755740019077267
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-rate-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 287834334158310
+						}
+					],
+					"actions": [],
+					"sid": 779313099718419,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 641333099455485
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 612398529205992,
+									"parameters": {
+										"type": "log",
+										"message": "\"Rate completed\""
+									}
+								}
+							],
+							"sid": 336233727904034
+						}
+					]
+				}
+			],
+			"sid": 477763616322634
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Leaderboards Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 204527179079058
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "LeaderboardsTypeLabel",
+							"sid": 452178580861073,
+							"parameters": {
+								"text": "PlaygamaBridge.LeaderboardsType"
+							}
+						}
+					],
+					"sid": 801939281090499
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 367926514433321,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "SetScoreBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "leaderboards-set-score",
+							"objectClass": "PlaygamaBridge",
+							"sid": 270804510064356,
+							"parameters": {
+								"id": "LeaderboardIdInput.Text",
+								"score": "int(ScoreInput.Text)"
+							}
+						}
+					],
+					"sid": 685867776517256
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-leaderboards-set-score-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 208066640637684
+						}
+					],
+					"actions": [],
+					"sid": 312547014406369,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 664011432417495
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 335488005360881,
+									"parameters": {
+										"type": "log",
+										"message": "\"Leaderboards Set Score Completed\""
+									}
+								}
+							],
+							"sid": 135028688243751
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 400143203880668,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetEntriesBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "leaderboards-get-entries",
+							"objectClass": "PlaygamaBridge",
+							"sid": 915414232413988,
+							"parameters": {
+								"id": "LeaderboardId2Input.Text"
+							}
+						}
+					],
+					"sid": 493671616063184
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-leaderboards-get-entries-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 381374478977665
+						}
+					],
+					"actions": [],
+					"sid": 225296649812239,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 847376500509228
+								}
+							],
+							"actions": [],
+							"sid": 807800901313799,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 101859698738415,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.LeaderboardEntriesCount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 419850091006940,
+											"parameters": {
+												"type": "log",
+												"message": "\"ID: \" & PlaygamaBridge.LeaderboardEntryId(loopindex)"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 540023040299614,
+											"parameters": {
+												"type": "log",
+												"message": "\"Name: \" & PlaygamaBridge.LeaderboardEntryName(loopindex)"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 556956366730569,
+											"parameters": {
+												"type": "log",
+												"message": "\"Photo: \" & PlaygamaBridge.LeaderboardEntryPhoto(loopindex)"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 586712910646737,
+											"parameters": {
+												"type": "log",
+												"message": "\"Rank: \" & PlaygamaBridge.LeaderboardEntryRank(loopindex)"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 414730143048212,
+											"parameters": {
+												"type": "log",
+												"message": "\"Score: \" & PlaygamaBridge.LeaderboardEntryScore(loopindex)"
+											}
+										}
+									],
+									"sid": 389074577978903
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 932707784726710
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Payments Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 587963794674952
+						}
+					],
+					"actions": [],
+					"sid": 969278569491535,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-payments-supported",
+									"objectClass": "PlaygamaBridge",
+									"sid": 931190906070613
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "PaymentsSupportLabel",
+									"sid": 632119992510467,
+									"parameters": {
+										"text": "\"Supported\""
+									}
+								}
+							],
+							"sid": 928895745746490
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 555956792610759,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "PurchaseBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 992171060779428,
+							"parameters": {
+								"key": "\"externalid\"",
+								"value": "\"EXTERNAL_ID\""
+							}
+						},
+						{
+							"id": "payments-purchase",
+							"objectClass": "PlaygamaBridge",
+							"sid": 818134280105508,
+							"parameters": {
+								"id": "ProductIDLabel1.Text"
+							}
+						}
+					],
+					"sid": 494304795684631
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-payments-purchase-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 760781168175095
+						}
+					],
+					"actions": [],
+					"sid": 115854451939447,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 297372767522053
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 630146297099143,
+									"parameters": {
+										"type": "log",
+										"message": "\"Purchase completed. id:\"&PlaygamaBridge.PaymentsLastPurchasePropertyValue(\"id\")"
+									}
+								}
+							],
+							"sid": 964254607391614
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 848886307408858,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "ConsumeBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "payments-consume-purchase",
+							"objectClass": "PlaygamaBridge",
+							"sid": 375553753472835,
+							"parameters": {
+								"id": "ProductIDLabel2.Text"
+							}
+						}
+					],
+					"sid": 438747057461109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-payments-consume-purchase-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 317511905748037
+						}
+					],
+					"actions": [],
+					"sid": 322344000982023,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 554645766056097
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 786733628727438,
+									"parameters": {
+										"type": "log",
+										"message": "\"Consume completed, id: \" & PlaygamaBridge.PaymentsLastPurchasePropertyValue(\"id\")"
+									}
+								}
+							],
+							"sid": 341530870094368
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 534053406093960,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetCatalogBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "payments-get-catalog",
+							"objectClass": "PlaygamaBridge",
+							"sid": 928568030464573
+						}
+					],
+					"sid": 490554876978437
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-payments-get-catalog-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 212899974660974
+						}
+					],
+					"actions": [],
+					"sid": 837379816676571,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 924709054207477,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsCatalogItemsCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 374819072901562,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 190236608973239,
+											"parameters": {
+												"name": "\"items\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.PaymentsCatalogItemsCount - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 441968966623355,
+											"parameters": {
+												"type": "log",
+												"message": "\"ID: \" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"id\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 180598611607570,
+											"parameters": {
+												"type": "log",
+												"message": "\"Price: \" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"price\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 982898294510513,
+											"parameters": {
+												"type": "log",
+												"message": "\"Price Currency Code: \" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceCurrencyCode\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 831077742734179,
+											"parameters": {
+												"type": "log",
+												"message": "\"Price Value: \" & PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceValue\")"
+											}
+										}
+									],
+									"sid": 936974148196890
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 652101729968865,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetPurchaseBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "payments-get-purchases",
+							"objectClass": "PlaygamaBridge",
+							"sid": 949645592620834
+						}
+					],
+					"sid": 806528870143973
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-payments-get-purchases-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 489885541976997
+						}
+					],
+					"actions": [],
+					"sid": 588823493497383,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 255505971177657,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsPurchasesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 257710419424750,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 489062031449693,
+											"parameters": {
+												"name": "\"purchases\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.PaymentsPurchasesCount - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 269661683284444,
+											"parameters": {
+												"type": "log",
+												"message": "\"ID: \" & PlaygamaBridge.PaymentsPurchasePropertyValue(loopindex(\"purchases\"), \"id\")"
+											}
+										}
+									],
+									"sid": 450153189605328
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 104474101640702
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Achievement Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-achievements-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 312127921020793
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "AchievementSupportLabel",
+							"sid": 858549140977235,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 184149898631143
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 202031656386741,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "UnlockBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 861967837037895,
+							"parameters": {
+								"key": "\"achievementkey\"",
+								"value": "AchievementKeyInput.Text"
+							}
+						},
+						{
+							"id": "add-action-parameter",
+							"objectClass": "PlaygamaBridge",
+							"sid": 105629043656247,
+							"parameters": {
+								"key": "\"achievement\"",
+								"value": "AchievementNameInput.Text"
+							}
+						},
+						{
+							"id": "achievements-unlock",
+							"objectClass": "PlaygamaBridge",
+							"sid": 479172598874038
+						}
+					],
+					"sid": 571619801524492
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-achievements-unlock-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 503482564227700
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 978592161035936,
+							"parameters": {
+								"type": "log",
+								"message": "\"Achivement Unlocked\""
+							}
+						}
+					],
+					"sid": 144030147122143,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 219120349917129
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-achievements-get-list-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 454298401435751
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "GetListSupportLabel",
+							"sid": 959885176251590,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 538183391813848
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 321484835311796,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GetListBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "achievements-get-list",
+							"objectClass": "PlaygamaBridge",
+							"sid": 895527832895004
+						}
+					],
+					"sid": 986092774217402
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-achievements-get-list-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 406014749443198
+						}
+					],
+					"actions": [],
+					"sid": 387018092116104,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 920525630608768,
+									"parameters": {
+										"first-value": "PlaygamaBridge.AchievementsCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 879718534916107,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 528885915996771,
+											"parameters": {
+												"name": "\"item\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.AchievementsCount-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 989117928849942,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement ID: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"achievementid\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 469565772691218,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Name: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"achievement\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 842480705341620,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Key: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"achievementkey\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 806713859237154,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Description: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"description\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 768707917186049,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Icon: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"icon\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 291850296580722,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Difficulty: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"difficulty\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 321785156465000,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Secret: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"secret\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 261364528788852,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Awarded: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"awarded\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 500617957590118,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Game: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"game\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 450702580886590,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Link: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"link\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 945622751172112,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement PlayerID: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"playerid\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 171526290432084,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Player Name: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"playername\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 170011194582509,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Last Updateed: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"lastupdated\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 142356868788563,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Date: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"date\")"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 297096379110781,
+											"parameters": {
+												"type": "log",
+												"message": "\"Achievement Relative Date: \" & PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"rdate\")"
+											}
+										}
+									],
+									"sid": 139488999615565
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-achievements-native-popup-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 481413369394870
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "NativePopUpSupportLabel",
+							"sid": 536164445845926,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						}
+					],
+					"sid": 825125073446851
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 387961303826418,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "NativePopUpBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "achievements-show-native-popup",
+							"objectClass": "PlaygamaBridge",
+							"sid": 269557135800083
+						}
+					],
+					"sid": 360187738862835
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-achievements-show-native-popup-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 773284111698048
+						}
+					],
+					"actions": [],
+					"sid": 652833756073862,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 687742402636447
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 938793227533963,
+									"parameters": {
+										"type": "log",
+										"message": "\"Achievement Native Pop Up shown\""
+									}
+								}
+							],
+							"sid": 679452505573310
+						}
+					]
+				}
+			],
+			"sid": 749660297776648
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Remote Config Panel Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-remote-config-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 349872469749106
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RemoteSupportLabel",
+							"sid": 671888974763799,
+							"parameters": {
+								"text": "\"Supported\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "RemoteGetBtn",
+							"sid": 158360304098680,
+							"parameters": {
+								"opacity": "100"
+							}
+						}
+					],
+					"sid": 589015173017134
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 138525959285666,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "RemoteGetBtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-remote-config-get-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 309821425388313
+						}
+					],
+					"sid": 852467920472213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-remote-config-got-completed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 887175239864330
+						}
+					],
+					"actions": [],
+					"sid": 808355464917107,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-last-action-completed-successfully",
+									"objectClass": "PlaygamaBridge",
+									"sid": 380382766892471
+								},
+								{
+									"id": "has-remote-config-value",
+									"objectClass": "PlaygamaBridge",
+									"sid": 628465919530459,
+									"parameters": {
+										"key": "\"example_key\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "RemoteContentLabel",
+									"sid": 115743652539546,
+									"parameters": {
+										"text": "PlaygamaBridge.RemoteConfigValue(\"example_key\")"
+									}
+								}
+							],
+							"sid": 294374330917115
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 503740506383543
+						}
+					]
+				}
+			],
+			"sid": 177236479482687
+		}
+	],
+	"sid": 277597006129129
+}

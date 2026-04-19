@@ -8,43 +8,464 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "PlaygamaBridge",
 			"name": "PlaygamaBridge",
 			"author": "Playgama",
 			"bundled": false,
-			"version": "1.29.0",
+			"version": "1.30.0",
 			"sdkVersion": 2
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "fuxacugnrim",
 	"objectTypes": {
 		"items": [
-			"PlaygamaBridge"
+			"PlaygamaBridge",
+			"Mouse",
+			"BackBtn",
+			"TopMask",
+			"Browser",
+			"Date"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"PlatformIDLabel",
+					"PlatformPanel",
+					"LanguageLabel",
+					"PayloadLabel",
+					"TLDLabel",
+					"AudioStateLabel",
+					"ServerTimeLabel",
+					"IsGetAllGamesSupportedLabel",
+					"IsGetGameByIDSupportedLabel",
+					"GetServerTimeBtn",
+					"GetAllGamesBtn",
+					"GameIDInput",
+					"GetGameByIDBtn",
+					"LevelStartBtn",
+					"LevelPauseBtn",
+					"LevelCompleteBtn",
+					"LevelResumeBtn",
+					"SendGameReadyBtn",
+					"SendAchievementBtn",
+					"LevelFailBtn"
+				],
+				"subfolders": [],
+				"name": "Platform"
+			},
+			{
+				"items": [
+					"AchievementKeyInput",
+					"AchievementNameInput",
+					"AchievementPanel",
+					"AchievementSupportLabel",
+					"GetListBtn",
+					"GetListSupportLabel",
+					"UnlockBtn",
+					"NativePopUpBtn",
+					"NativePopUpSupportLabel"
+				],
+				"subfolders": [],
+				"name": "Achivement"
+			},
+			{
+				"items": [
+					"AdsPanel",
+					"BannerStateLabel",
+					"BannerSupportLabel",
+					"InterstitialDelayLabel",
+					"InterstitialStateLabel",
+					"InterstitialSupportLabel",
+					"AdBlockLabel",
+					"CheckAdBlockBtn",
+					"RewardPlacementLabel",
+					"RewardStateLabel",
+					"RewardSupportLabel",
+					"ShowBannerBtn",
+					"ShowInterstitialBtn",
+					"ShowRewardBtn",
+					"HideBannerBtn"
+				],
+				"subfolders": [],
+				"name": "Advertisements"
+			},
+			{
+				"items": [
+					"AuthBtn",
+					"AuthStateLabel",
+					"AuthSupportLabel",
+					"Avatar",
+					"PlayerIdLabel",
+					"PlayerNameLabel",
+					"PlayerPanel"
+				],
+				"subfolders": [],
+				"name": "Player"
+			},
+			{
+				"items": [
+					"AddFavouritesSupportLabel",
+					"AddHomeSupportLabel",
+					"FavouriteBtn",
+					"FavouriteRewardBtn",
+					"FavouritesSupportLabel",
+					"FriendSupportLabel",
+					"ShareBtn",
+					"ShareSupportLabel",
+					"SocialPanel",
+					"PostBtn",
+					"PostSupportLabel",
+					"RateBtn",
+					"RateSupportLabel",
+					"InviteBtn",
+					"JoinBtn",
+					"JoinCommunitySupportLabel",
+					"LinkSupportLabel",
+					"HomeBtn",
+					"HomeRewardBtn",
+					"HomeSupportLabel"
+				],
+				"subfolders": [],
+				"name": "Social"
+			},
+			{
+				"items": [
+					"DevicePanel",
+					"DevicePanelBody",
+					"DeviceTypeLabel"
+				],
+				"subfolders": [],
+				"name": "Device"
+			},
+			{
+				"items": [
+					"AchievementBtn",
+					"AdBtn",
+					"DeviceBtn",
+					"PaymentBtn",
+					"PlatformBtn",
+					"GameBtn",
+					"LeaderboardBtn",
+					"PlayerBtn",
+					"RemoteBtn",
+					"SocialBtn",
+					"StorageBtn",
+					"bridgeicon",
+					"bridgesign"
+				],
+				"subfolders": [],
+				"name": "Menu"
+			},
+			{
+				"items": [
+					"DefaultStorageTypeLabel",
+					"DeleteDataBtn",
+					"CoinCountInput",
+					"StoragePanel",
+					"SaveDataBtn",
+					"PlatformInternalAvailableLabel",
+					"PlatformInternalSupportLabel",
+					"LoadDataBtn",
+					"LocalStorageAvailableLabel",
+					"LocalStorageRadioBtn",
+					"LocalStorageSupportLabel",
+					"PlatformStorageRadioBtn",
+					"LevelIdInput"
+				],
+				"subfolders": [],
+				"name": "Storage"
+			},
+			{
+				"items": [
+					"PaymentsPanel",
+					"PaymentsSupportLabel",
+					"ProductIDLabel1",
+					"ProductIDLabel2",
+					"PurchaseBtn",
+					"ConsumeBtn",
+					"GetCatalogBtn",
+					"GetPurchaseBtn",
+					"Button",
+					"PaymentsDataLabel"
+				],
+				"subfolders": [],
+				"name": "Payments"
+			},
+			{
+				"items": [
+					"GetEntriesBtn",
+					"ScoreInput",
+					"SetScoreBtn",
+					"LeaderboardDataLabel",
+					"LeaderboardId2Input",
+					"LeaderboardIdInput",
+					"LeaderboardsPanel",
+					"LeaderboardsTypeLabel"
+				],
+				"subfolders": [],
+				"name": "Leaderboards"
+			},
+			{
+				"items": [
+					"RemoteConfigPanel",
+					"RemoteContentLabel",
+					"RemoteGetBtn",
+					"RemoteSupportLabel"
+				],
+				"subfolders": [],
+				"name": "RemoteConfig"
+			},
+			{
+				"items": [
+					"CurrentVisibilityLabel",
+					"GamePanel",
+					"LastVisibilityLabel"
+				],
+				"subfolders": [],
+				"name": "Game"
+			}
+		]
 	},
 	"functionsName": "Functions",
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"DevicePanel",
+				"DevicePanelBody",
+				"DeviceTypeLabel"
+			]
+		},
+		{
+			"members": [
+				"CurrentVisibilityLabel",
+				"GamePanel",
+				"LastVisibilityLabel"
+			]
+		},
+		{
+			"members": [
+				"RemoteConfigPanel",
+				"RemoteGetBtn",
+				"RemoteSupportLabel"
+			]
+		},
+		{
+			"members": [
+				"BackBtn",
+				"TopMask"
+			]
+		},
+		{
+			"members": [
+				"AdBlockLabel",
+				"AdsPanel",
+				"BannerStateLabel",
+				"BannerSupportLabel",
+				"CheckAdBlockBtn",
+				"HideBannerBtn",
+				"InterstitialDelayLabel",
+				"InterstitialStateLabel",
+				"InterstitialSupportLabel",
+				"RewardPlacementLabel",
+				"RewardStateLabel",
+				"RewardSupportLabel",
+				"ShowBannerBtn",
+				"ShowInterstitialBtn",
+				"ShowRewardBtn"
+			]
+		},
+		{
+			"members": [
+				"AddFavouritesSupportLabel",
+				"AddHomeSupportLabel",
+				"FavouriteBtn",
+				"FavouriteRewardBtn",
+				"FavouritesSupportLabel",
+				"FriendSupportLabel",
+				"HomeBtn",
+				"HomeRewardBtn",
+				"HomeSupportLabel",
+				"InviteBtn",
+				"JoinBtn",
+				"JoinCommunitySupportLabel",
+				"LinkSupportLabel",
+				"PostBtn",
+				"PostSupportLabel",
+				"RateBtn",
+				"RateSupportLabel",
+				"ShareBtn",
+				"ShareSupportLabel",
+				"SocialPanel"
+			]
+		},
+		{
+			"members": [
+				"AuthBtn",
+				"AuthStateLabel",
+				"AuthSupportLabel",
+				"Avatar",
+				"PlayerIdLabel",
+				"PlayerNameLabel",
+				"PlayerPanel"
+			]
+		},
+		{
+			"members": [
+				"AchievementKeyInput",
+				"AchievementNameInput",
+				"AchievementPanel",
+				"AchievementSupportLabel",
+				"GetListBtn",
+				"GetListSupportLabel",
+				"NativePopUpBtn",
+				"NativePopUpSupportLabel",
+				"UnlockBtn"
+			]
+		},
+		{
+			"members": [
+				"CoinCountInput",
+				"DefaultStorageTypeLabel",
+				"DeleteDataBtn",
+				"LevelIdInput",
+				"LoadDataBtn",
+				"LocalStorageAvailableLabel",
+				"LocalStorageRadioBtn",
+				"LocalStorageSupportLabel",
+				"PlatformInternalAvailableLabel",
+				"PlatformInternalSupportLabel",
+				"PlatformStorageRadioBtn",
+				"SaveDataBtn",
+				"StoragePanel"
+			]
+		},
+		{
+			"members": [
+				"GetEntriesBtn",
+				"LeaderboardDataLabel",
+				"LeaderboardId2Input",
+				"LeaderboardIdInput",
+				"LeaderboardsPanel",
+				"LeaderboardsTypeLabel",
+				"ScoreInput",
+				"SetScoreBtn"
+			]
+		},
+		{
+			"members": [
+				"AudioStateLabel",
+				"GameIDInput",
+				"GetAllGamesBtn",
+				"GetGameByIDBtn",
+				"GetServerTimeBtn",
+				"IsGetAllGamesSupportedLabel",
+				"IsGetGameByIDSupportedLabel",
+				"LanguageLabel",
+				"LevelCompleteBtn",
+				"LevelFailBtn",
+				"LevelPauseBtn",
+				"LevelResumeBtn",
+				"LevelStartBtn",
+				"PayloadLabel",
+				"PlatformIDLabel",
+				"PlatformPanel",
+				"SendAchievementBtn",
+				"SendGameReadyBtn",
+				"ServerTimeLabel",
+				"TLDLabel"
+			]
+		},
+		{
+			"members": [
+				"ConsumeBtn",
+				"GetCatalogBtn",
+				"GetPurchaseBtn",
+				"PaymentsPanel",
+				"PaymentsSupportLabel",
+				"ProductIDLabel1",
+				"ProductIDLabel2",
+				"PurchaseBtn"
+			]
+		}
+	],
 	"families": {
 		"items": [],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"PlaygamaExample"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"PlaygamaEventExample"
 		],
 		"subfolders": []
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 373388008462329,
+					"script-info": {
+						"purpose": "main"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
@@ -60,7 +481,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "GeistMono-VariableFont_wght.ttf",
+					"type": "application/font-sfnt",
+					"sid": 226701308579116,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -125,7 +555,24 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "playgama-bridge-config.json",
+					"type": "application/json",
+					"sid": 341791437748415,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "InputField.css",
+					"type": "text/css",
+					"sid": 726980863901949,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
@@ -205,7 +652,7 @@
 		"exportFileStructure": "folders",
 		"scriptsType": "module"
 	},
-	"viewportWidth": 854,
-	"viewportHeight": 480,
+	"viewportWidth": 680,
+	"viewportHeight": 400,
 	"firstLayout": null
 }

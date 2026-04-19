@@ -1,0 +1,10 @@
+{
+	"name": "IsGetAllGamesSupportedLabel",
+	"plugin-id": "Text",
+	"sid": 600732490891851,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

@@ -1,0 +1,9 @@
+{
+	"name": "AchievementNameInput",
+	"plugin-id": "TextBox",
+	"sid": 701533860623067,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": []
+}

@@ -1,0 +1,10 @@
+{
+	"name": "PayloadLabel",
+	"plugin-id": "Text",
+	"sid": 123508803771435,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

@@ -1,0 +1,10 @@
+{
+	"name": "TLDLabel",
+	"plugin-id": "Text",
+	"sid": 101491481840257,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

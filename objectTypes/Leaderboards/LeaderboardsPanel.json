@@ -1,0 +1,52 @@
+{
+	"name": "LeaderboardsPanel",
+	"plugin-id": "Sprite",
+	"sid": 620237177818896,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 680,
+						"height": 548,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5794192,
+						"collisionPoly": {
+							"points": [
+								0.016176470588235296,
+								0,
+								1,
+								0.020072992700729927,
+								0.9838235294117647,
+								1,
+								0,
+								0.9799270072992701
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 758483202456437,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

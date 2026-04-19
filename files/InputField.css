@@ -1,0 +1,23 @@
+input {
+            background-color: #1D1D21 !important; /* Dark grey background */
+            color: #ffffff !important;           /* White typing text */
+            border: none !important;             /* Remove default border */
+            border-radius: 8px !important;       /* Rounded corners */
+            padding: 0px 15px !important;        /* Horizontal padding */
+            font-family: 'Segoe UI', sans-serif; /* Clean font */
+            font-size: 14px !important;
+            outline: none !important;            /* Remove blue focus ring */
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2); /* Subtle depth */
+        }
+
+        /* Style the 'Key' placeholder text */
+        input::placeholder {
+            color: #5c5e64 !important;           /* Muted grey from your image */
+            opacity: 1;
+        }
+
+        /* Optional: Add a subtle border when the user clicks it */
+        input:focus {
+            background-color: #25262b !important;
+            border: 1px solid #3e4046 !important;
+        }

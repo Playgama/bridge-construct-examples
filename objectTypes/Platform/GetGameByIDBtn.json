@@ -1,0 +1,137 @@
+{
+	"name": "GetGameByIDBtn",
+	"plugin-id": "Sprite",
+	"sid": 870735833091669,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 142,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7895206,
+						"collisionPoly": {
+							"points": [
+								0.0738255033557047,
+								0,
+								0.9261744966442953,
+								0,
+								0.9530201342281879,
+								0.0625,
+								0.9865771812080537,
+								0.21875,
+								1,
+								0.34375,
+								1,
+								0.65625,
+								0.9865771812080537,
+								0.78125,
+								0.9530201342281879,
+								0.9375,
+								0.9261744966442953,
+								1,
+								0.0738255033557047,
+								1,
+								0.04697986577181208,
+								0.9375,
+								0.013422818791946308,
+								0.78125,
+								0,
+								0.65625,
+								0,
+								0.34375,
+								0.013422818791946308,
+								0.21875,
+								0.04697986577181208,
+								0.0625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 456130479952088,
+				"name": "Normal",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 142,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1919059,
+						"collisionPoly": {
+							"points": [
+								0.0738255033557047,
+								0,
+								0.9261744966442953,
+								0,
+								0.9530201342281879,
+								0.0625,
+								0.9865771812080537,
+								0.21875,
+								1,
+								0.34375,
+								1,
+								0.65625,
+								0.9865771812080537,
+								0.78125,
+								0.9530201342281879,
+								0.9375,
+								0.9261744966442953,
+								1,
+								0.0738255033557047,
+								1,
+								0.04697986577181208,
+								0.9375,
+								0.013422818791946308,
+								0.78125,
+								0,
+								0.65625,
+								0,
+								0.34375,
+								0.013422818791946308,
+								0.21875,
+								0.04697986577181208,
+								0.0625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 634659170946082,
+				"name": "Hover",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
