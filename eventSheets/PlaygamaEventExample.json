@@ -1469,32 +1469,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "append-storage-data-delete-request",
-							"objectClass": "PlaygamaBridge",
-							"sid": 385139920109542,
-							"parameters": {
-								"key": "\"coin\""
-							}
-						},
-						{
-							"id": "append-storage-data-delete-request",
-							"objectClass": "PlaygamaBridge",
-							"sid": 116983281806373,
-							"parameters": {
-								"key": "\"level\""
-							}
-						},
-						{
-							"id": "send-storage-data-delete-request",
-							"objectClass": "PlaygamaBridge",
-							"sid": 345115927074114,
-							"parameters": {
-								"storage-type": "default"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 566580235278306,
 					"children": [
 						{
@@ -1503,7 +1478,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 330902420640752,
+									"sid": 888210754530500,
 									"parameters": {
 										"variable": "isLocalStorage"
 									}
@@ -1513,7 +1488,7 @@
 								{
 									"id": "append-storage-data-delete-request",
 									"objectClass": "PlaygamaBridge",
-									"sid": 285544899176673,
+									"sid": 475038200377238,
 									"parameters": {
 										"key": "\"coin\""
 									}
@@ -1521,7 +1496,7 @@
 								{
 									"id": "append-storage-data-delete-request",
 									"objectClass": "PlaygamaBridge",
-									"sid": 625844319818076,
+									"sid": 837873907652908,
 									"parameters": {
 										"key": "\"level\""
 									}
@@ -1529,13 +1504,13 @@
 								{
 									"id": "send-storage-data-delete-request",
 									"objectClass": "PlaygamaBridge",
-									"sid": 612153506743446,
+									"sid": 942550714327056,
 									"parameters": {
 										"storage-type": "local-storage"
 									}
 								}
 							],
-							"sid": 930223572411790
+							"sid": 710750602485956
 						},
 						{
 							"eventType": "block",
@@ -1543,7 +1518,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 670919830147135,
+									"sid": 155853910916034,
 									"parameters": {
 										"variable": "isLocalStorage"
 									},
@@ -1554,7 +1529,7 @@
 								{
 									"id": "append-storage-data-delete-request",
 									"objectClass": "PlaygamaBridge",
-									"sid": 492535863776821,
+									"sid": 630627917882054,
 									"parameters": {
 										"key": "\"coin\""
 									}
@@ -1562,7 +1537,7 @@
 								{
 									"id": "append-storage-data-delete-request",
 									"objectClass": "PlaygamaBridge",
-									"sid": 523556128069163,
+									"sid": 306313422443612,
 									"parameters": {
 										"key": "\"level\""
 									}
@@ -1570,13 +1545,13 @@
 								{
 									"id": "send-storage-data-delete-request",
 									"objectClass": "PlaygamaBridge",
-									"sid": 514420234964565,
+									"sid": 552618970441699,
 									"parameters": {
 										"storage-type": "platform-internal"
 									}
 								}
 							],
-							"sid": 830799690288691
+							"sid": 698228321247665
 						}
 					]
 				},
@@ -3062,11 +3037,11 @@
 										{
 											"id": "for",
 											"objectClass": "System",
-											"sid": 101859698738415,
+											"sid": 342722235327843,
 											"parameters": {
 												"name": "\"\"",
 												"start-index": "0",
-												"end-index": "PlaygamaBridge.LeaderboardEntriesCount"
+												"end-index": "PlaygamaBridge.LeaderboardEntriesCount-1"
 											}
 										}
 									],
@@ -3675,9 +3650,9 @@
 										{
 											"id": "for",
 											"objectClass": "System",
-											"sid": 528885915996771,
+											"sid": 311515887799963,
 											"parameters": {
-												"name": "\"item\"",
+												"name": "\"items\"",
 												"start-index": "0",
 												"end-index": "PlaygamaBridge.AchievementsCount-1"
 											}
