@@ -1,0 +1,112 @@
+{
+	"name": "GameLayout",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Exported from Figma\">\n  <title>Exported Figma Design</title>\n  \n  <style>\n    /* Add font files for Geist Mono */\n    @font-face {\n      font-family: 'Geist Mono';\n      src: url('fonts/geist-mono.woff2') format('woff2'),\n           url('fonts/geist-mono.woff') format('woff');\n      font-weight: normal;\n      font-style: normal;\n    }\n\n    :root {\n      --font-family-geist-mono: 'Geist Mono', sans-serif;\n      --font-sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n      --text-rgb-162-162-168: rgba(162, 162, 168, 1);\n      --text-white: rgba(255, 255, 255, 1);\n      --text-rgb-216-187-255: rgba(216, 187, 255, 1);\n      \n      /* Added missing variables for the new back button */\n      --bg-back-icon: #2a2a2e;\n      --text-muted: #8e8e93;\n    }\n\n    .text-white {\n      color: var(--text-white);\n    }\n\n    .text-rgb-216-187-255 {\n      color: var(--text-rgb-216-187-255);\n    }\n\n    /* CSS Reset */\n    * {\n      margin: 0;\n      padding: 0;\n      box-sizing: border-box;\n    }\n\n    body {\n      width: 100%;\n      min-height: 100vh;\n      overflow-x: auto;\n      background-color: rgba(13, 13, 15, 1); \n    }\n\n    img {\n      max-width: 100%;\n      height: auto;\n    }\n\n    /* Prototype Links */\n    a.prototype-link {\n      text-decoration: none;\n      color: inherit;\n      display: contents;\n    }\n\n    /* New Back Button CSS */\n    .back-icon-wrapper {\n      background-color: var(--bg-back-icon);\n      width: 46px; \n      height: 46px;\n      border-radius: 50%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      color: var(--text-muted);\n      transition: background-color 0.2s;\n    }\n\n    .back-text {\n      color: var(--text-muted);\n      font-family: var(--font-sans);\n      font-size: 20px; \n      font-weight: 500;\n    }\n\n    .back-link {\n      display: flex;\n      flex-direction: row;\n      justify-content: flex-start;\n      align-items: center;\n      gap: 8px;\n      padding: 0px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n      cursor: pointer;\n    }\n\n    .ghost-button-text {\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n      text-align: center;\n      font-family: var(--font-family-geist-mono);\n      font-weight: 500;\n      font-size: 14px;\n      line-height: 100%;\n      text-decoration: none;\n      text-transform: none;\n      color: var(--text-white);\n    }\n\n    .ghost-button {\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      align-items: center;\n      gap: 6px;\n      padding: 9px 12px 9px 12px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n      opacity: 0;\n    }\n\n    .header {\n      display: flex;\n      flex-direction: row;\n      justify-content: space-between;\n      align-items: center;\n      gap: 8px;\n      padding: 12px 8px 12px 8px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      width: 100%;\n      background-color: rgba(13, 13, 15, 0.92);\n    }\n\n    .card-title {\n      flex-grow: 1;\n      flex-shrink: 1;\n      flex-basis: auto;\n      text-align: left;\n      font-family: var(--font-family-geist-mono);\n      font-weight: 500;\n      font-size: 18px;\n      line-height: 100%;\n      text-decoration: none;\n      text-transform: none;\n      color: var(--text-white);\n    }\n\n    .card-header {\n      display: flex;\n      flex-direction: row;\n      justify-content: center;\n      align-items: center;\n      gap: 8px;\n      padding: 8px 0px 8px 0px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      width: 96.3855421686747%;\n    }\n\n    .state-text-current {\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n      text-align: left;\n      font-family: var(--font-family-geist-mono);\n      font-weight: normal;\n      font-size: 13px;\n      line-height: 100%;\n      text-decoration: none;\n      text-transform: none;\n      color: var(--text-white);\n      font-family: var(--font-family-geist-mono);\n      font-weight: normal;\n      font-size: 13px;\n      line-height: 100%;\n      text-decoration: none;\n      text-transform: none;\n      color: var(--text-rgb-216-187-255);\n    }\n\n    .state-text-last {\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n      text-align: left;\n      font-family: var(--font-family-geist-mono);\n      font-weight: normal;\n      font-size: 13px;\n      line-height: 100%;\n      text-decoration: none;\n      text-transform: none;\n      color: var(--text-white);\n      font-family: var(--font-family-geist-mono);\n      font-weight: normal;\n      font-size: 13px;\n      line-height: 100%;\n      text-decoration: none;\n      text-transform: none;\n      color: var(--text-rgb-216-187-255);\n    }\n\n    .card-content {\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 8px 0px 8px 0px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n    }\n\n    .card-body {\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n      gap: 16px;\n      padding: 0px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      flex-basis: auto;\n    }\n\n    .card {\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n      gap: 12px;\n      padding: 12px;\n      flex-grow: 1;\n      flex-shrink: 1;\n      width: 97.6470588235294%;\n      background-color: rgba(41, 41, 46, 1);\n      border-radius: 12px;\n    }\n\n    .card-list {\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      align-items: flex-start;\n      gap: 4px;\n      padding: 0px 8px 0px 8px;\n      flex-grow: 1;\n      flex-shrink: 1;\n      width: 100%;\n    }\n\n    .app-container {\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: center;\n      padding: 0px 0px 8px 0px;\n      width: 100%;\n      min-height: 100vh;\n      margin: 0 auto;\n      max-width: 680px;\n      flex-grow: 0;\n      flex-shrink: 1;\n      background-color: rgba(13, 13, 15, 1);\n      border-radius: 16px;\n    }\n\n    @media (max-width: 1440px) {\n      .app-container {\n        padding-left: 24px;\n        padding-right: 24px;\n      }\n    }\n\n    @media (max-width: 768px) {\n      .app-container {\n        padding-left: 16px;\n        padding-right: 16px;\n      }\n    }\n  </style>\n</head>\n<body>\n<div class=\"app-container\">\n  <div class=\"header\">\n    <div class=\"back-link\">\n      <div class=\"back-icon-wrapper\">\n        <svg width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n          <polyline points=\"15 18 9 12 15 6\"></polyline>\n        </svg>\n      </div>\n      <span class=\"back-text\">Back</span>\n    </div>\n    \n    <div class=\"ghost-button\" style=\"background-color: rgba(41, 41, 46, 1); opacity: 0\">\n      <p class=\"ghost-button-text\"><span class=\"text-white\">How to Use</span></p>\n    </div>\n  </div>\n  <div class=\"card-list\">\n    <div class=\"card\">\n      <div class=\"card-header\">\n        <p class=\"card-title\"><span class=\"text-white\">Game</span></p>\n      </div>\n      <div class=\"card-body\">\n        <div class=\"card-content\">\n          <p class=\"state-text-current\"><span class=\"text-white\">Current Visibility State: </span><span class=\"text-rgb-216-187-255\">visible</span></p>\n          <p class=\"state-text-last\"><span class=\"text-white\">Last Visibility State: </span><span class=\"text-rgb-216-187-255\">true visible -&gt; </span></p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"set-background-color": true,
+						"default-background-color": [
+							0.050980392156862744,
+							0.050980392156862744,
+							0.058823529411764705,
+							1
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 5,
+					"sid": 254183606372708,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 254183606372708,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 682,
+						"height": 400,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 452650441828812,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
+	"sid": 516674183603411,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 680,
+	"height": 400,
+	"unboundedScrolling": false,
+	"sampling": "auto",
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "PlayerEvent"
+}

@@ -3,23 +3,47 @@
 	"savedWithRelease": 47603,
 	"name": "bridge-construct-examples",
 	"runtime": "c3",
-	"useWorker": "dom",
+	"useWorker": "auto",
 	"bundleAddons": false,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "HTMLElement",
+			"name": "HTML Element",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
 		{
 			"type": "plugin",
 			"id": "PlaygamaBridge",
 			"name": "PlaygamaBridge",
 			"author": "Playgama",
 			"bundled": false,
-			"version": "1.29.0",
+			"version": "1.30.0",
 			"sdkVersion": 2
 		}
 	],
 	"uniqueId": "fuxacugnrim",
 	"objectTypes": {
 		"items": [
-			"PlaygamaBridge"
+			"PlaygamaBridge",
+			"Browser",
+			"HTMLElement",
+			"Mouse"
 		],
 		"subfolders": []
 	},
@@ -32,13 +56,35 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"MainLayout",
+			"RemoteConfigLayout",
+			"GameLayout",
+			"DeviceLayout",
+			"PaymentLayout",
+			"LeaderboardLayout",
+			"StorageLayout",
+			"AdvertisementsLayout",
+			"SocialLayout",
+			"PlayerLayout",
+			"PlatformLayout",
+			"AchievementLayout"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"RemoteConfigEvent",
+			"PlayerEvent",
+			"PaymentEvent",
+			"MainEvent",
+			"AchievementEvent",
+			"PlatformEvent",
+			"SocialEvent",
+			"GameEvent",
+			"AdvertisementEvent",
+			"StorageEvent",
+			"LeaderboardEvent",
+			"DeviceEvent"
 		],
 		"subfolders": []
 	},
@@ -125,14 +171,204 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
-			"subfolders": []
+			"items": [
+				{
+					"name": "playgama-bridge-config.json",
+					"type": "application/json",
+					"sid": 353252226935068,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "shape-icon-6.svg",
+							"type": "image/svg+xml",
+							"sid": 384848266592599,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "avatar0.png",
+							"type": "image/png",
+							"sid": 821237158663231,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "avatar1.png",
+							"type": "image/png",
+							"sid": 708287703022521,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-25.svg",
+							"type": "image/svg+xml",
+							"sid": 966412279254800,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-29.svg",
+							"type": "image/svg+xml",
+							"sid": 516421991816859,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-34.svg",
+							"type": "image/svg+xml",
+							"sid": 435461022259938,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-38.svg",
+							"type": "image/svg+xml",
+							"sid": 288944981898675,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-44.svg",
+							"type": "image/svg+xml",
+							"sid": 709603762537441,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-48.svg",
+							"type": "image/svg+xml",
+							"sid": 372042407062179,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-54.svg",
+							"type": "image/svg+xml",
+							"sid": 901522138532801,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "bridge-sign-7.svg",
+							"type": "image/svg+xml",
+							"sid": 179704256617707,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "like-29.svg",
+							"type": "image/svg+xml",
+							"sid": 635849164524281,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-22.svg",
+							"type": "image/svg+xml",
+							"sid": 703819891129591,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-36.svg",
+							"type": "image/svg+xml",
+							"sid": 719214158355381,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "primary-65.svg",
+							"type": "image/svg+xml",
+							"sid": 159521751287773,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape-icon-15.svg",
+							"type": "image/svg+xml",
+							"sid": 941262037810661,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape-icon-51.svg",
+							"type": "image/svg+xml",
+							"sid": 814635055392269,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape-icon-58.svg",
+							"type": "image/svg+xml",
+							"sid": 454112345705937,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape-icon-73.svg",
+							"type": "image/svg+xml",
+							"sid": 266843538573090,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape-icon-80.svg",
+							"type": "image/svg+xml",
+							"sid": 717673824633740,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shape-icon-87.svg",
+							"type": "image/svg+xml",
+							"sid": 302015621523001,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "vector-6.svg",
+							"type": "image/svg+xml",
+							"sid": 766457946652230,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "images"
+				}
+			]
 		}
 	},
 	"timelines": {
-		"items": [
-			"Timeline 1"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [],
@@ -141,9 +377,7 @@
 		]
 	},
 	"flowcharts": {
-		"items": [
-			"Flowchart 1"
-		],
+		"items": [],
 		"subfolders": []
 	},
 	"models3d": {
@@ -172,16 +406,16 @@
 			0
 		],
 		"splashColor": [
-			1,
-			1,
-			1,
+			0,
+			0,
+			0,
 			0
 		],
-		"useThemeColor": false,
+		"useThemeColor": true,
 		"themeColor": [
-			1,
-			1,
-			1,
+			0,
+			0,
+			0,
 			0
 		],
 		"orientations": "landscape",
@@ -205,7 +439,7 @@
 		"exportFileStructure": "folders",
 		"scriptsType": "module"
 	},
-	"viewportWidth": 854,
-	"viewportHeight": 480,
+	"viewportWidth": 680,
+	"viewportHeight": 400,
 	"firstLayout": null
 }

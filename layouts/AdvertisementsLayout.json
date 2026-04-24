@@ -1,0 +1,112 @@
+{
+	"name": "AdvertisementsLayout",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<!DOCTYPE html>\n<html lang=\"en\">\n   <head>\n      <meta charset=\"UTF-8\">\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n      <meta name=\"description\" content=\"Exported from Figma, Optimized\">\n      <title>Optimized Figma Design - Ads</title>\n      <style>\n         /* Font Loading Optimized */\n         @font-face {\n         font-family: 'Geist Mono';\n         src: url('fonts/geist-mono.woff2') format('woff2'),\n         url('fonts/geist-mono.woff') format('woff');\n         font-weight: normal;\n         font-style: normal;\n         font-display: swap;\n         }\n         :root {\n         /* Typography */\n         --font-mono: 'Geist Mono', ui-monospace, monospace;\n         --font-sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n         /* Colors */\n         --bg-main: #0d0d0f;\n         --bg-header: rgba(13, 13, 15, 0.92);\n         --bg-card: #29292e;\n         --bg-btn-primary: #9d50ff;\n         --bg-btn-secondary: #49494c;\n         --bg-back-icon: #2a2a2e;\n         --bg-back-hover: #38383e;\n         /* Text */\n         --text-white: rgba(255, 255, 255, 0.8);\n         --text-accent: #d8bbff;\n         --text-muted: #8e8e93;\n         }\n         /* CSS Reset */\n         * {\n         margin: 0;\n         padding: 0;\n         box-sizing: border-box;\n         }\n         /* FIX: Force entire window to be dark to eliminate white bands */\n         html, body {\n         width: 100%;\n         min-height: 100vh;\n         background-color: var(--bg-main) !important;\n         overflow-x: hidden;\n         }\n         /* FIX: Master wrapper to handle Construct 3 full screen centering */\n         .app-wrapper {\n         width: 100%;\n         min-height: 100vh;\n         background-color: var(--bg-main);\n         padding: 20px; \n         color: #fff;\n         overflow-y: auto;\n         display: flex;\n         flex-direction: column;\n         align-items: center;\n         }\n         .page-container {\n         width: 100%;\n         height: 100%;\n         background-color: #0D0D0F;\n         padding: 20px; \n         color: white;\n         overflow-y: auto;\n         display: flex;\n         flex-direction: column;\n         margin: 0 auto;\n         }\n         @media (max-width: 1440px) { .page-container { padding: 16px 24px; } }\n         @media (max-width: 768px)  { .page-container { padding: 16px; } }\n         /* Typography Utilities */\n         .text-white { color: var(--text-white); }\n         .text-accent { color: var(--text-accent); }\n         /* --- Clean Back Button CSS --- */\n         .app-header {\n         display: flex;\n         justify-content: space-between;\n         align-items: center;\n         padding: 12px 8px;\n         width: 100%;\n         background-color: var(--bg-header);\n         }\n         .nav-back-btn {\n         display: flex;\n         align-items: center;\n         gap: 12px;\n         background: none;\n         border: none;\n         cursor: pointer;\n         }\n         .back-icon-container {\n         background-color: var(--bg-back-icon);\n         width: 46px; \n         height: 46px;\n         border-radius: 50%;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         color: var(--text-muted);\n         transition: background-color 0.2s;\n         }\n         .nav-back-btn:hover .back-icon-container {\n         background-color: var(--bg-back-hover);\n         }\n         .back-label {\n         color: var(--text-muted);\n         font-family: var(--font-sans);\n         font-size: 20px; \n         font-weight: 500;\n         }\n         .nav-label {\n         font-family: var(--font-mono);\n         font-weight: 500;\n         font-size: 14px;\n         color: var(--text-white);\n         }\n         .hidden-nav-action {\n         opacity: 0;\n         padding: 9px 12px;\n         pointer-events: none;\n         }\n         /* --- Cards --- */\n         .card-list {\n         display: flex;\n         flex-direction: column;\n         gap: 4px;\n         padding: 0 8px;\n         width: 100%;\n         }\n         .content-card {\n         display: flex;\n         flex-direction: column;\n         gap: 12px;\n         padding: 12px;\n         background-color: var(--bg-card);\n         border-radius: 12px;\n         }\n         .card-header {\n         padding: 8px 0;\n         }\n         .card-title {\n         font-family: var(--font-mono);\n         font-weight: 500;\n         font-size: 18px;\n         color: var(--text-white);\n         }\n         .card-body {\n         display: flex;\n         flex-direction: column;\n         gap: 16px;\n         padding-bottom: 16px;\n         border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n         }\n         .card-body:last-child {\n         border-bottom: none;\n         padding-bottom: 0;\n         }\n         .status-list {\n         display: flex;\n         flex-direction: column;\n         gap: 12px;\n         padding: 8px 0;\n         }\n         .status-item {\n         font-family: var(--font-mono);\n         font-size: 13px;\n         }\n         /* --- Buttons --- */\n         .action-group {\n         display: flex;\n         align-items: center;\n         gap: 8px;\n         flex-wrap: wrap;\n         }\n         .btn {\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         padding: 9px 12px;\n         border: none;\n         border-radius: 20px;\n         cursor: pointer;\n         transition: filter 0.2s ease;\n         }\n         .btn:hover {\n         filter: brightness(1.1);\n         }\n         .primary-btn {\n         background-color: var(--bg-btn-primary);\n         }\n         .secondary-btn {\n         background-color: var(--bg-btn-secondary);\n         }\n         .btn-label {\n         font-family: var(--font-mono);\n         font-size: 13px;\n         color: #fff;\n         }\n      </style>\n   </head>\n   <body class=\"page-container\">\n      <div class=\"page-container\">\n         <header class=\"app-header\">\n            <button class=\"nav-back-btn\" aria-label=\"Go Back\">\n               <div class=\"back-icon-container\" aria-hidden=\"true\">\n                  <svg width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n                     <polyline points=\"15 18 9 12 15 6\"></polyline>\n                  </svg>\n               </div>\n               <span class=\"back-label\">Back</span>\n            </button>\n            <div class=\"hidden-nav-action\" aria-hidden=\"true\">\n               <span class=\"nav-label\">How to Use</span>\n            </div>\n         </header>\n         <main class=\"card-list\">\n            <div class=\"content-card\">\n               <section class=\"card-body\">\n                  <header class=\"card-header\">\n                     <h2 class=\"card-title\">Banner</h2>\n                  </header>\n                  <div class=\"status-list\">\n                     <p class=\"status-item\"><span class=\"text-white\">Is Banner Supported: </span><span class=\"text-accent\">true</span></p>\n                     <p class=\"status-item\"><span class=\"text-white\">Last Banner States: </span><span class=\"text-accent\">shown</span></p>\n                  </div>\n                  <div class=\"action-group\">\n                     <button class=\"btn primary-btn\">\n                     <span class=\"btn-label\">Show</span>\n                     </button>\n                     <button class=\"btn secondary-btn\">\n                     <span class=\"btn-label\">Hide</span>\n                     </button>\n                  </div>\n               </section>\n               <section class=\"card-body\">\n                  <header class=\"card-header\">\n                     <h2 class=\"card-title\">Interstitial</h2>\n                  </header>\n                  <div class=\"status-list\">\n                     <p class=\"status-item\"><span class=\"text-white\">Is Interstitial Supported: </span><span class=\"text-accent\">true</span></p>\n                     <p class=\"status-item\"><span class=\"text-white\">Minimum Delay Between Interstitial: </span><span class=\"text-accent\">60</span></p>\n                     <p class=\"status-item\"><span class=\"text-white\">Last Interstitial States: </span><span class=\"text-accent\">closed -&gt;</span></p>\n                  </div>\n                  <div class=\"action-group\">\n                     <button class=\"btn primary-btn\">\n                     <span class=\"btn-label\">Show</span>\n                     </button>\n                     <button class=\"btn secondary-btn\">\n                     <span class=\"btn-label\">Hide</span>\n                     </button>\n                  </div>\n               </section>\n               <section class=\"card-body\">\n                  <header class=\"card-header\">\n                     <h2 class=\"card-title\">Rewarded</h2>\n                  </header>\n                  <div class=\"status-list\">\n                     <p class=\"status-item\"><span class=\"text-white\">Is Rewarded Supported: </span><span class=\"text-accent\">true</span></p>\n                     <p class=\"status-item\"><span class=\"text-white\">Last Rewarded States: </span><span class=\"text-accent\">closed -&gt;</span></p>\n                     <p class=\"status-item\"><span class=\"text-white\">Rewarded Placement: </span><span class=\"text-accent\">&lt;null&gt;</span></p>\n                  </div>\n                  <div class=\"action-group\">\n                     <button class=\"btn primary-btn\">\n                     <span class=\"btn-label\">Show</span>\n                     </button>\n                     <button class=\"btn secondary-btn\">\n                     <span class=\"btn-label\">Hide</span>\n                     </button>\n                  </div>\n               </section>\n               <section class=\"card-body\">\n                  <header class=\"card-header\">\n                     <h2 class=\"card-title\">AdBlock Detected</h2>\n                  </header>\n                  <div class=\"action-group\">\n                     <button class=\"btn primary-btn\">\n                     <span class=\"btn-label\">Check AdBlock</span>\n                     </button>\n                  </div>\n               </section>\n            </div>\n         </main>\n      </div>\n   </body>\n</html>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"set-background-color": true,
+						"default-background-color": [
+							0.050980392156862744,
+							0.050980392156862744,
+							0.058823529411764705,
+							1
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 11,
+					"sid": 296771611579621,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 296771611579621,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 680,
+						"height": 400,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 396867445299714,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
+	"sid": 487306865177710,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 682,
+	"height": 400,
+	"unboundedScrolling": false,
+	"sampling": "auto",
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "PaymentEvent"
+}

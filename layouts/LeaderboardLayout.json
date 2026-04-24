@@ -1,0 +1,112 @@
+{
+	"name": "LeaderboardLayout",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Exported from Figma, Optimized\">\n  <title>Optimized Figma Design</title>\n  \n  <style>\n    /* Add font files for Geist Mono */\n    @font-face {\n      font-family: 'Geist Mono';\n      src: url('fonts/geist-mono.woff2') format('woff2'),\n           url('fonts/geist-mono.woff') format('woff');\n      font-weight: normal;\n      font-style: normal;\n    }\n\n    :root {\n      --font-family-geist-mono: 'Geist Mono', sans-serif;\n      --font-sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n      --text-white: rgba(255, 255, 255, 0.8);\n      --text-accent: rgba(216, 187, 255, 1);\n      \n      /* Back button variables */\n      --bg-back-icon: #2a2a2e;\n      --text-muted: #8e8e93;\n    }\n\n    /* CSS Reset */\n    * {\n      margin: 0;\n      padding: 0;\n      box-sizing: border-box;\n    }\n\n    /* FIX: Force entire window to be dark to eliminate white bands */\n    html, body {\n      width: 100%;\n      height: 100%;\n      background-color: rgba(13, 13, 15, 1) !important;\n      overflow-x: hidden;\n    }\n\n    /* FIX: Master wrapper to handle Construct 3 full screen centering */\n    .app-wrapper {\n      width: 100%;\n      height: 100%;\n      background-color: #0D0D0F;\n      padding: 20px; \n      color: white;\n      overflow-y: auto;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n\n    .page-container {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      padding: 16px 0px;\n      width: 100%;\n      max-width: 680px;\n      background-color: rgba(13, 13, 15, 1);\n    }\n\n    @media (max-width: 1440px) { .page-container { padding: 16px 24px; } }\n    @media (max-width: 768px) { .page-container { padding: 16px; } }\n\n    /* Typography Utilities */\n    .text-white { color: var(--text-white); }\n    .text-accent { color: var(--text-accent); }\n\n    /* --- Clean Back Button CSS --- */\n    .app-header {\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n      padding: 12px 8px;\n      width: 100%;\n      background-color: rgba(13, 13, 15, 0.92);\n    }\n\n    .nav-back-btn {\n      display: flex;\n      align-items: center;\n      gap: 12px;\n      background: none;\n      border: none;\n      cursor: pointer;\n    }\n\n    .back-icon-container {\n      background-color: var(--bg-back-icon);\n      width: 46px; \n      height: 46px;\n      border-radius: 50%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      color: var(--text-muted);\n      transition: background-color 0.2s;\n    }\n\n    .nav-back-btn:hover .back-icon-container {\n      background-color: #38383e;\n    }\n\n    .back-label {\n      color: var(--text-muted);\n      font-family: var(--font-sans);\n      font-size: 20px; \n      font-weight: 500;\n    }\n\n    .nav-label {\n      font-family: var(--font-family-geist-mono);\n      font-weight: 500;\n      font-size: 14px;\n      color: var(--text-white);\n    }\n\n    .hidden-nav-action {\n      opacity: 0;\n      padding: 9px 12px;\n      pointer-events: none;\n    }\n\n    /* --- Cards --- */\n    .card-list {\n      display: flex;\n      flex-direction: column;\n      gap: 4px;\n      padding: 0px 8px;\n      width: 100%;\n    }\n\n    .content-card {\n      display: flex;\n      flex-direction: column;\n      gap: 12px;\n      padding: 12px;\n      width: 100%;\n      background-color: rgba(41, 41, 46, 1);\n      border-radius: 12px;\n    }\n\n    .card-header {\n      padding: 8px 0px;\n      width: 100%;\n    }\n\n    .card-title {\n      font-family: var(--font-family-geist-mono);\n      font-weight: 500;\n      font-size: 18px;\n      color: var(--text-white);\n    }\n\n    .card-body {\n      display: flex;\n      flex-direction: column;\n      gap: 16px;\n      width: 100%;\n    }\n\n    .status-list {\n      display: flex;\n      flex-direction: column;\n      gap: 12px;\n      padding: 8px 0px;\n    }\n\n    .status-item {\n      font-family: var(--font-family-geist-mono);\n      font-size: 13px;\n    }\n\n    /* --- Form Inputs --- */\n    .form-row {\n      display: flex;\n      align-items: center;\n      gap: 8px;\n      width: 100%;\n    }\n\n    .input-wrapper {\n      display: flex;\n      align-items: center;\n      padding: 8px 12px;\n      flex: 1;\n      background-color: rgba(29, 29, 33, 1);\n      border-radius: 8px;\n    }\n\n    input.text-input {\n      width: 100%;\n      background: transparent;\n      border: none;\n      outline: none;\n      font-family: var(--font-family-geist-mono);\n      font-size: 13px;\n      color: var(--text-white);\n    }\n\n    input.text-input::placeholder {\n      color: var(--text-white);\n      opacity: 0.7;\n    }\n\n    input.text-input:focus {\n      outline: 1px solid var(--text-accent);\n      border-radius: 2px;\n    }\n\n    /* Custom Radio styling to match CSS constraints natively */\n    .radio-label {\n      display: flex;\n      align-items: center;\n      gap: 8px;\n      font-family: var(--font-family-geist-mono);\n      font-size: 13px;\n      color: var(--text-white);\n      cursor: pointer;\n    }\n    \n    .radio-label input[type=\"radio\"] {\n      accent-color: var(--text-accent);\n      width: 16px;\n      height: 16px;\n      cursor: pointer;\n    }\n\n    /* --- Buttons --- */\n    .action-group {\n      display: flex;\n      align-items: center;\n      gap: 8px;\n      flex-wrap: wrap;\n    }\n\n    .action-group .primary-btn {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      padding: 9px 12px;\n      border: none;\n      border-radius: 20px;\n      background-color: #9d50ff;\n      cursor: pointer;\n      transition: filter 0.2s ease;\n    }\n\n    .action-group .primary-btn:hover {\n      filter: brightness(1.1);\n    }\n\n    .btn-label {\n      font-family: var(--font-family-geist-mono);\n      font-size: 13px;\n      color: #fff;\n    }\n\n    /* --- Utilities --- */\n    .section-divider {\n      width: 100%;\n      border: none;\n      border-top: 1px solid rgba(255, 255, 255, 0.08);\n      margin: 0;\n    }\n\n    .code-container {\n      width: 100%;\n      padding: 16px 12px;\n      background-color: rgba(29, 29, 33, 1);\n      border-radius: 8px;\n      min-height: 30vh;\n    }\n\n    .code-snippet {\n      font-family: var(--font-family-geist-mono);\n      font-size: 13px;\n      line-height: 1.3;\n      color: var(--text-white);\n      white-space: pre-wrap;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"app-wrapper\">\n    <div class=\"page-container\">\n      \n      <header class=\"app-header\">\n        <button class=\"nav-back-btn\">\n          <div class=\"back-icon-container\">\n            <svg width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n              <polyline points=\"15 18 9 12 15 6\"></polyline>\n            </svg>\n          </div>\n          <span class=\"back-label\">Back</span>\n        </button>\n\n        <div class=\"hidden-nav-action\">\n          <span class=\"nav-label\">How to Use</span>\n        </div>\n      </header>\n\n      <main class=\"card-list\">\n        <section class=\"content-card\">\n          \n          <header class=\"card-header\">\n            <h2 class=\"card-title\">Storage</h2>\n          </header>\n\n          <div class=\"card-body\">\n            \n            <div class=\"status-list\">\n              <p class=\"status-item\">\n                <span class=\"text-white\">Default Storage Type: </span>\n                <span class=\"text-accent\">platform_internal</span>\n              </p>\n              <p class=\"status-item\">\n                <span class=\"text-white\">Is Local Storage Supported: </span>\n                <span class=\"text-accent\">true</span>\n              </p>\n              <p class=\"status-item\">\n                <span class=\"text-white\">Is Local Storage Available: </span>\n                <span class=\"text-accent\">true</span>\n              </p>\n              <p class=\"status-item\">\n                <span class=\"text-white\">Is Platform Internal Supported: </span>\n                <span class=\"text-accent\">true</span>\n              </p>\n              <p class=\"status-item\">\n                <span class=\"text-white\">Is Platform Internal Available: </span>\n                <span class=\"text-accent\">true</span>\n              </p>\n            </div>\n\n            <div class=\"form-row\">\n              <div class=\"input-wrapper\">\n                <input type=\"text\" class=\"text-input\" placeholder=\"Coins count\" />\n              </div>\n              <div class=\"input-wrapper\">\n                <input type=\"text\" class=\"text-input\" placeholder=\"Level ID\" />\n              </div>\n            </div>\n\n            <div class=\"status-list\" style=\"padding: 0;\">\n              <label class=\"radio-label\">\n                <input type=\"radio\" name=\"storage_selection\" value=\"local\" checked />\n                Local Storage\n              </label>\n              <label class=\"radio-label\">\n                <input type=\"radio\" name=\"storage_selection\" value=\"platform\" />\n                Platform Internal\n              </label>\n            </div>\n\n            <div class=\"action-group\">\n              <button class=\"primary-btn\">\n                <span class=\"btn-label\">Load Data</span>\n              </button>\n              <button class=\"primary-btn\">\n                <span class=\"btn-label\">Save Data</span>\n              </button>\n              <button class=\"primary-btn\" style=\"background-color: rgba(73, 73, 76, 1);\">\n                <span class=\"btn-label\">Delete Data</span>\n              </button>\n            </div>\n\n          </div>\n        </section>\n      </main>\n\n    </div>\n  </div>\n</body>\n</html>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"set-background-color": true,
+						"default-background-color": [
+							0.050980392156862744,
+							0.050980392156862744,
+							0.058823529411764705,
+							1
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 9,
+					"sid": 858092872405915,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 858092872405915,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 680,
+						"height": 400,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 865956307254845,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
+	"sid": 644308876480773,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 682,
+	"height": 400,
+	"unboundedScrolling": false,
+	"sampling": "auto",
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "PaymentEvent"
+}
