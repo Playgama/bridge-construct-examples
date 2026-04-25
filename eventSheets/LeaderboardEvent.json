@@ -1,0 +1,343 @@
+{
+	"name": "LeaderboardEvent",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 122352842533761
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 922857766390624,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.LeaderboardsType",
+						"selector": "\"#leaderboard-type-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 262488071739069
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 193269914178995,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 533035879027351,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 472865519083858
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 521895308369887,
+					"parameters": {
+						"id": "\"set-score-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "leaderboards-set-score",
+					"objectClass": "PlaygamaBridge",
+					"sid": 294525667239283,
+					"parameters": {
+						"id": "Browser.ExecJS(\"document.getElementById('leaderboard-id-input').value\")",
+						"score": "int(Browser.ExecJS(\"document.getElementById('score-input').value\"))"
+					}
+				}
+			],
+			"sid": 869980583029515
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-leaderboards-set-score-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 526509628888445
+				}
+			],
+			"actions": [],
+			"sid": 737962352065956,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 369681214741398
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 770984064908855,
+							"parameters": {
+								"type": "log",
+								"message": "\"Set score completed\""
+							}
+						},
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 705771942566904,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"Set score completed\"",
+								"selector": "\"#leaderboard-data-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 178598781228630
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 763352724584190,
+					"parameters": {
+						"id": "\"get-entries-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "leaderboards-get-entries",
+					"objectClass": "PlaygamaBridge",
+					"sid": 228068697564948,
+					"parameters": {
+						"id": "Browser.ExecJS(\"document.getElementById('leaderboard-id2-input').value\")"
+					}
+				}
+			],
+			"sid": 414146412808720
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-leaderboards-get-entries-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 313531212048965
+				}
+			],
+			"actions": [],
+			"sid": 801948921699242,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 482751178148718
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 349179322633795,
+							"parameters": {
+								"type": "log",
+								"message": "\"Get entries completed\""
+							}
+						}
+					],
+					"sid": 133208818715345,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 103001613439025,
+									"parameters": {
+										"first-value": "PlaygamaBridge.LeaderboardEntriesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-array",
+									"objectClass": "JSON",
+									"sid": 663750476175370,
+									"parameters": {
+										"path": "\"entries\"",
+										"size": "0"
+									}
+								}
+							],
+							"sid": 831437560960447,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 324794168828003,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.LeaderboardEntriesCount-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "push-value",
+											"objectClass": "JSON",
+											"sid": 617162022685189,
+											"parameters": {
+												"where": "back",
+												"path": "\"entries\"",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "set-object",
+											"objectClass": "JSON",
+											"sid": 234925564272510,
+											"parameters": {
+												"path": "\"entries.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-path",
+											"objectClass": "JSON",
+											"sid": 234108935453640,
+											"parameters": {
+												"path": "\"entries.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 201264802806856,
+											"parameters": {
+												"path": "\".id\"",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 549095225168204,
+											"parameters": {
+												"path": "\".name\"",
+												"value": "PlaygamaBridge.LeaderboardEntryName(loopindex)"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 354310820539419,
+											"parameters": {
+												"path": "\".photo\"",
+												"value": "PlaygamaBridge.LeaderboardEntryPhoto(loopindex)"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 613366941362706,
+											"parameters": {
+												"path": "\".score\"",
+												"value": "PlaygamaBridge.LeaderboardEntryScore(loopindex)"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 619330692989139,
+											"parameters": {
+												"path": "\".rank\"",
+												"value": "PlaygamaBridge.LeaderboardEntryRank(loopindex)"
+											}
+										}
+									],
+									"sid": 201662645964564
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 634167606244835,
+									"parameters": {
+										"first-value": "PlaygamaBridge.LeaderboardEntriesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-content",
+									"objectClass": "HTMLElement",
+									"sid": 324214348552135,
+									"parameters": {
+										"content-type": "html",
+										"string": "JSON.ToBeautifiedString",
+										"selector": "\"#leaderboard-data-label\"",
+										"type": "one"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 937960693806110,
+									"parameters": {
+										"path": "\"entries\""
+									}
+								}
+							],
+							"sid": 238816743688266
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 407119939851798
+}

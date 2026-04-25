@@ -1,0 +1,121 @@
+{
+	"name": "MainLayout",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Bridge - Optimized Interactive Grid\">\n  <title>Bridge - Optimized Design</title>\n  \n  <style>\n    /* Font Loading Optimized */\n    @font-face {\n      font-family: 'Geist Mono';\n      src: url('fonts/GeistMono-Regular.ttf') format('truetype');\n      font-weight: normal;\n      font-style: normal;\n      font-display: swap;\n    }\n\n    :root {\n      --font-family-geist-mono: 'Geist Mono', sans-serif;\n      --bg-main: rgba(13, 13, 15, 1);\n      --card-default: rgba(41, 41, 46, 1);\n      \n      /* Colors from reference */\n      --color-platform: #AF72FE;\n      --color-storage: #6CC3F5;\n      --color-social: #5B8FFF;\n      --color-achievements: #00C2B2;\n      --color-device: #FF6B4A;\n      --color-advertisement: #FF5ABF;\n      --color-leaderboards: #FB3E67;\n      --color-remote-config: #A2A2A8;\n      --color-game: #66C64F;\n      --color-player: #BCE648;\n      --color-payments: #FF9A2E;\n    }\n\n    /* Reset & Base */\n    * {\n      margin: 0;\n      padding: 0;\n      box-sizing: border-box;\n    }\n\n    body {\n      width: 100%;\n      min-height: 100vh;\n      background-color: #000;\n      font-family: var(--font-family-geist-mono);\n    }\n\n    /* Layout */\n    .app-container {\n      display: flex;\n      flex-direction: column;\n      width: 100%;\n      max-width: 680px;\n      margin: 40px auto;\n      background-color: var(--bg-main);\n      border-radius: 20px;\n      padding-bottom: 24px;\n      overflow: hidden;\n    }\n\n    /* Header */\n    .app-header {\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n      padding: 24px 16px;\n    }\n\n    .back-nav {\n      display: flex;\n      align-items: center;\n      gap: 12px;\n    }\n\n    .nav-icon-btn {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      width: 32px;\n      height: 32px;\n      background: #fff;\n      border-radius: 50%;\n    }\n\n    .nav-title-img { height: 18px; }\n\n    /* Grid System (Column Based) */\n    .grid-layout {\n      display: flex;\n      padding: 0 16px;\n      gap: 4px;\n      width: 100%;\n    }\n\n    .grid-col {\n      display: flex;\n      flex-direction: column;\n      gap: 4px;\n      flex: 1;\n    }\n\n    /* Category Cards */\n    .category-card {\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      padding: 16px;\n      background-color: var(--card-default);\n      border-radius: 12px;\n      min-height: 80px;\n      cursor: pointer;\n      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);\n    }\n\n    .icon-inner img {\n      width: 24px;\n      height: 24px;\n      transition: filter 0.2s;\n    }\n\n    .category-title-wrapper {\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n      width: 100%;\n      margin-top: 12px;\n    }\n\n    .category-title {\n      font-size: 13px;\n      font-weight: 500;\n    }\n\n    .category-arrow {\n      opacity: 0;\n      transform: translateX(-5px);\n      transition: all 0.2s ease;\n      font-size: 16px;\n      color: #000;\n    }\n\n    /* Hover States Logic */\n    .category-card:hover {\n      transform: translateY(-2px);\n    }\n\n    /* Color Assignments */\n    .category-card[data-color=\"platform\"]:hover { background-color: var(--color-platform); }\n    .category-card[data-color=\"storage\"]:hover { background-color: var(--color-storage); }\n    .category-card[data-color=\"social\"]:hover { background-color: var(--color-social); }\n    .category-card[data-color=\"achievements\"]:hover { background-color: var(--color-achievements); }\n    .category-card[data-color=\"device\"]:hover { background-color: var(--color-device); }\n    .category-card[data-color=\"advertisement\"]:hover { background-color: var(--color-advertisement); }\n    .category-card[data-color=\"leaderboards\"]:hover { background-color: var(--color-leaderboards); }\n    .category-card[data-color=\"remote-config\"]:hover { background-color: var(--color-remote-config); }\n    .category-card[data-color=\"game\"]:hover { background-color: var(--color-game); }\n    .category-card[data-color=\"player\"]:hover { background-color: var(--color-player); }\n    .category-card[data-color=\"payments\"]:hover { background-color: var(--color-payments); }\n\n    /* Content Inversion on Hover */\n    .category-card:hover .category-title span {\n      color: #000 !important;\n    }\n\n    .category-card:hover .icon-inner img {\n      filter: brightness(0); /* Turns SVG/Icons black */\n    }\n\n    .category-card:hover .category-arrow {\n      opacity: 1;\n      transform: translateX(0);\n    }\n\n    /* Text Colors for Default State */\n    .text-platform { color: var(--color-platform); }\n    .text-storage { color: var(--color-storage); }\n    .text-social { color: var(--color-social); }\n    .text-achievements { color: var(--color-achievements); }\n    .text-device { color: var(--color-device); }\n    .text-ad { color: var(--color-advertisement); }\n    .text-leaderboards { color: var(--color-leaderboards); }\n    .text-remote-config { color: var(--color-remote-config); }\n    .text-game { color: var(--color-game); }\n    .text-player { color: var(--color-player); }\n    .text-payments { color: var(--color-payments); }\n\n  </style>\n</head>\n<body>\n\n  <div class=\"app-container\">\n    <header class=\"app-header\">\n      <div class=\"back-nav\">\n        <div class=\"nav-icon-btn\">\n          <img src=\"images/vector-6.svg\" alt=\"logo\" width=\"14\">\n        </div>\n        <img src=\"images/bridge-sign-7.svg\" class=\"nav-title-img\" alt=\"BRIDGE\">\n      </div>\n    </header>\n\n    <main class=\"grid-layout\">\n      <div class=\"grid-col\">\n        <div class=\"category-card\" data-color=\"platform\" id=\"platform-btn\">\n          <div class=\"icon-inner\"><img src=\"images/shape-icon-15.svg\" alt=\"Platform\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-platform\">Platform</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"storage\" id=\"storage-btn\">\n          <div class=\"icon-inner\"><img src=\"images/primary-36.svg\" alt=\"Storage\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-storage\">Storage</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"social\" id=\"social-btn\">\n          <div class=\"icon-inner\"><img src=\"images/like-29.svg\" alt=\"Social\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-social\">Social</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"achievements\" id=\"achievements-btn\">\n          <div class=\"icon-inner\"><img src=\"images/primary-36.svg\" alt=\"Achievements\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-achievements\">Achievements</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"grid-col\">\n        <div class=\"category-card\" data-color=\"device\" id=\"device-btn\">\n          <div class=\"icon-inner\"><img src=\"images/primary-44.svg\" alt=\"Device\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-device\">Device</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"advertisement\" id=\"ads-btn\">\n          <div class=\"icon-inner\"><img src=\"images/shape-icon-51.svg\" alt=\"Ads\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-ad\">Advertisement</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"leaderboards\" id=\"leaderboards-btn\">\n          <div class=\"icon-inner\"><img src=\"images/shape-icon-58.svg\" alt=\"Leaderboards\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-leaderboards\">Leaderboards</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"remote-config\" id=remote-btn>\n          <div class=\"icon-inner\"><img src=\"images/primary-65.svg\" alt=\"Remote\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-remote-config\">Remote Config</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"grid-col\">\n        <div class=\"category-card\" data-color=\"game\" id=\"game-btn\">\n          <div class=\"icon-inner\"><img src=\"images/shape-icon-73.svg\" alt=\"Game\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-game\">Game</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"player\" id=\"player-btn\">\n          <div class=\"icon-inner\"><img src=\"images/shape-icon-80.svg\" alt=\"Player\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-player\">Player</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n\n        <div class=\"category-card\" data-color=\"payments\" id=\"payments-btn\">\n          <div class=\"icon-inner\"><img src=\"images/shape-icon-87.svg\" alt=\"Payments\"></div>\n          <div class=\"category-title-wrapper\">\n            <p class=\"category-title\"><span class=\"text-payments\">Payments</span></p>\n            <span class=\"category-arrow\">→</span>\n          </div>\n        </div>\n        \n        <div style=\"flex-grow: 1;\"></div>\n      </div>\n    </main>\n  </div>\n\n</body>\n</html>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"set-background-color": true,
+						"default-background-color": [
+							0.050980392156862744,
+							0.050980392156862744,
+							0.058823529411764705,
+							1
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 16,
+					"sid": 825470973001222,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 825470973001222,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 680,
+						"height": 400,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 968144520196065,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
+	"sid": 324812427455598,
+	"nonworld-instances": [
+		{
+			"type": "JSON",
+			"properties": {},
+			"uid": 17,
+			"sid": 504720294531320,
+			"tags": "",
+			"instanceVariables": {}
+		}
+	],
+	"effectTypes": [],
+	"width": 682,
+	"height": 400,
+	"unboundedScrolling": false,
+	"sampling": "auto",
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "MainEvent"
+}

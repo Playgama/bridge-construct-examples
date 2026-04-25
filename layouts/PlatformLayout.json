@@ -1,0 +1,112 @@
+{
+	"name": "PlatformLayout",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Exported from Figma, Optimized\">\n  <title>Exported Figma Design</title>\n  \n  <style>\n         /* Font Loading Optimized */\n    @font-face {\n      font-family: 'Geist Mono';\n      src: url('fonts/GeistMono-Regular.ttf') format('truetype');\n      font-weight: normal;\n      font-style: normal;\n      font-display: swap;\n    }\n         :root {\n         /* Typography */\n         --font-mono: 'Geist Mono', ui-monospace, monospace;\n         --font-sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n         /* Colors */\n         --bg-main: #0d0d0f;\n         --bg-header: rgba(13, 13, 15, 0.92);\n         --bg-card: #29292e;\n         --bg-btn-primary: #9d50ff;\n         --bg-btn-secondary: #49494c;\n         --bg-back-icon: #2a2a2e;\n         --bg-back-hover: #38383e;\n         /* Text */\n         --text-white: rgba(255, 255, 255, 0.8);\n         --text-accent: #d8bbff;\n         --text-muted: #8e8e93;\n         }\n         /* CSS Reset */\n         * {\n         margin: 0;\n         padding: 0;\n         box-sizing: border-box;\n         }\n         /* FIX: Force entire window to be dark to eliminate white bands */\n         html, body {\n         width: 100%;\n         min-height: 100vh;\n         background-color: var(--bg-main) !important;\n         overflow-x: hidden;\n         }\n         /* FIX: Master wrapper to handle Construct 3 full screen centering */\n         .app-wrapper {\n         width: 100%;\n         min-height: 100vh;\n         background-color: var(--bg-main);\n         padding: 20px; \n         color: #fff;\n         overflow-y: auto;\n         display: flex;\n         flex-direction: column;\n         align-items: center;\n         }\n         .page-container {\n         width: 100%;\n         height: 100%;\n         background-color: #0D0D0F;\n         padding: 20px; \n         color: white;\n         overflow-y: auto;\n         display: flex;\n         flex-direction: column;\n         margin: 0 auto;\n         }\n         @media (max-width: 1440px) { .page-container { padding: 16px 24px; } }\n         @media (max-width: 768px)  { .page-container { padding: 16px; } }\n         /* Typography Utilities */\n         .text-white { color: var(--text-white); }\n         .text-accent { color: var(--text-accent); }\n         /* --- Clean Back Button CSS --- */\n         .app-header {\n         display: flex;\n         justify-content: space-between;\n         align-items: center;\n         padding: 12px 8px;\n         width: 100%;\n         background-color: var(--bg-header);\n         }\n         .nav-back-btn {\n         display: flex;\n         align-items: center;\n         gap: 12px;\n         background: none;\n         border: none;\n         cursor: pointer;\n         }\n         .back-icon-container {\n         background-color: var(--bg-back-icon);\n         width: 46px; \n         height: 46px;\n         border-radius: 50%;\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         color: var(--text-muted);\n         transition: background-color 0.2s;\n         }\n         .nav-back-btn:hover .back-icon-container {\n         background-color: var(--bg-back-hover);\n         }\n         .back-label {\n         color: var(--text-muted);\n         font-family: var(--font-sans);\n         font-size: 20px; \n         font-weight: 500;\n         }\n         \n         /* --- Cards --- */\n         .card-list {\n         display: flex;\n         flex-direction: column;\n         gap: 4px;\n         padding: 0 8px;\n         width: 100%;\n         }\n         .content-card {\n         display: flex;\n         flex-direction: column;\n         gap: 10px;\n         padding: 10px;\n         background-color: var(--bg-card);\n         border-radius: 12px;\n         }\n         .card-header {\n         padding: 8px 0;\n         }\n         .card-title {\n         font-family: var(--font-mono);\n         font-weight: 500;\n         font-size: 18px;\n         color: var(--text-white);\n         }\n         .card-body {\n         display: flex;\n         flex-direction: column;\n         gap: 16px;\n         padding-bottom: 16px;\n         border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n         }\n         .card-body:last-child {\n         border-bottom: none;\n         padding-bottom: 0;\n         }\n         .status-list {\n         display: flex;\n         flex-direction: column;\n         gap: 12px;\n         padding: 8px 0;\n         }\n         .status-item {\n         font-family: var(--font-mono);\n         font-size: 13px;\n         }\n         /* --- Buttons --- */\n         .action-group {\n         display: flex;\n         align-items: center;\n         gap: 8px;\n         flex-wrap: wrap;\n         }\n         .btn {\n         display: flex;\n         justify-content: center;\n         align-items: center;\n         padding: 9px 12px;\n         border: none;\n         border-radius: 20px;\n         cursor: pointer;\n         transition: filter 0.2s ease;\n         }\n         .btn:hover {\n         filter: brightness(1.1);\n         }\n         .primary-btn {\n         background-color: var(--bg-btn-primary);\n         }\n         .secondary-btn {\n         background-color: var(--bg-btn-secondary);\n         }\n         .btn-label {\n         font-family: var(--font-mono);\n         font-size: 13px;\n         color: #fff;\n         }\n  </style>\n</head>\n<body class=\"app-wrapper\">\n  <div class=\"page-container\" style=\"max-width: 680px;\">\n    <div class=\"app-header\">\n      <div class=\"nav-back-btn\" id=\"back-btn\">\n        <div class=\"back-icon-container\">\n          <svg width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <polyline points=\"15 18 9 12 15 6\"></polyline>\n          </svg>\n        </div>\n        <p class=\"back-label\">Back</p>\n      </div>\n    </div>\n    \n    <div class=\"card-list\">\n      <div class=\"content-card\">\n        <div class=\"card-header\">\n          <p class=\"card-title\">Platform</p>\n        </div>\n        \n        <div class=\"card-body\">\n          <div class=\"status-list\">\n            <p class=\"status-item\"><span class=\"text-white\">Platform ID: </span><span class=\"text-accent\" id=\"platform-label\">none</span></p>\n            <p class=\"status-item\"><span class=\"text-white\">Language: </span><span class=\"text-accent\" id=\"language-label\">none</span></p>\n            <p class=\"status-item\"><span class=\"text-white\">Payload: </span><span class=\"text-accent\" id=\"payload-label\">&lt;null&gt;</span></p>\n            <p class=\"status-item\"><span class=\"text-white\">TLD: </span><span class=\"text-accent\" id=\"tld-label\">&lt;null&gt;</span></p>\n            <p class=\"status-item\"><span class=\"text-white\">Is Audio Enabled: </span><span class=\"text-accent\" id=\"audio-status-label\">false</span></p>\n          </div>\n        </div>\n        \n        <div class=\"card-body\">\n          <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px;\">\n            <button class=\"btn secondary-btn\" id=\"game-ready-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-25.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Send Game<br>ready</span>\n            </button>\n            <button class=\"btn secondary-btn\" id=\"level-start-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-34.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Level<br>Started</span>\n            </button>\n            <button class=\"btn secondary-btn\" id=\"level-complete-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-44.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Level<br>Completed</span>\n            </button>\n            <button class=\"btn secondary-btn\" id=\"level-fail-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-54.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Level<br>failed</span>\n            </button>\n            <button class=\"btn secondary-btn\" id=\"player-achievement-send-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-29.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Send Player<br>got Achievement</span>\n            </button>\n            <button class=\"btn secondary-btn\" id=\"level-pause-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-38.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Level<br>Paused</span>\n            </button>\n            <button class=\"btn secondary-btn\" id=\"level-resume-btn\" style=\"flex-direction: column; align-items: flex-start; border-radius: 12px; padding: 12px; height: auto; gap: 12px; width: 100%;\">\n              <img src=\"images/primary-48.svg\" alt=\"icon\">\n              <span class=\"btn-label\" style=\"text-align: left; line-height: 1.2; text-transform: uppercase;\">Level<br>Resumed</span>\n            </button>\n          </div>\n        </div>\n\n        <div class=\"card-body\">\n          <div class=\"status-list\" style=\"padding-bottom: 0;\">\n            <p class=\"status-item\"><span class=\"text-white\">Server Time: </span><span class=\"text-accent\" id=\"server-time-label\">null</span></p>\n          </div>\n          <div class=\"action-group\">\n            <div class=\"btn primary-btn\" id=\"get-time-btn\">\n              <p class=\"btn-label\">Get Server Time</p>\n            </div>\n          </div>\n        </div>\n\n        <div class=\"card-body\">\n          <div class=\"status-list\" style=\"padding-bottom: 0;\">\n            <p class=\"status-item\"><span class=\"text-white\">Is get All Games supported: </span><span class=\"text-accent\" id=\"get-all-games-support-label\">false</span></p>\n          </div>\n          <div class=\"action-group\" style=\"margin-bottom: 8px;\">\n            <div class=\"btn primary-btn\" id=\"get-all-games-btn\">\n              <p class=\"btn-label\">Get All Games</p>\n            </div>\n          </div>\n          <div id=\"all-games-data-label\" style=\"background-color: #1d1d21; padding: 16px; border-radius: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--text-white); white-space: pre-wrap; overflow-x: auto; line-height: 1.4;\">[\n    {\n        appID: string;\n        title: string;\n        url: string;\n        coverURL: string;\n        iconURL: string;\n    },\n    {\n        appID: string;\n        title: string;\n        url: string;\n        coverURL: string;\n        iconURL: string;\n    },\n    ...\n]</div>\n        </div>\n\n        <div class=\"card-body\">\n          <div class=\"status-list\" style=\"padding-bottom: 0;\">\n            <p class=\"status-item\"><span class=\"text-white\">Is get Game by ID supported: </span><span class=\"text-accent\" id=\"get-game-by-id-support-label\">false</span></p>\n          </div>\n          <div style=\"display: flex; flex-direction: column; gap: 12px;\">\n            <input type=\"text\" id=\"game-id-input\" placeholder=\"Game ID\" style=\"background-color: #1d1d21; border: none; outline: none; padding: 12px; border-radius: 8px; color: white; font-family: var(--font-mono); font-size: 13px; width: 100%;\">\n            <div class=\"btn primary-btn\" style=\"align-self: flex-start;\" id=\"get-game-by-id-btn\">\n              <p class=\"btn-label\">Get Game by ID</p>\n            </div>\n          </div>\n        </div>\n        \n      </div>\n    </div>\n  </div>\n</body>\n</html>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"set-background-color": true,
+						"default-background-color": [
+							0.050980392156862744,
+							0.050980392156862744,
+							0.058823529411764705,
+							1
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 14,
+					"sid": 296320043447252,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 296320043447252,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 680,
+						"height": 400,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 535121959439003,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
+	"sid": 635136422792956,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 682,
+	"height": 400,
+	"unboundedScrolling": false,
+	"sampling": "auto",
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "PlatformEvent"
+}

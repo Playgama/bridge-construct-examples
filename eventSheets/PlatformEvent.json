@@ -1,0 +1,920 @@
+{
+	"name": "PlatformEvent",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 829301307013264
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 552829632629931,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.PlatformId",
+						"selector": "\"#platform-label\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 533182309716613,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.PlatformLanguage",
+						"selector": "\"#language-label\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 815154625609273,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.PlatformPayload",
+						"selector": "\"#payload-label\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 375192007551948,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.PlatformTld",
+						"selector": "\"#tld-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 102558284739658
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-platform-audio-enabled",
+					"objectClass": "PlaygamaBridge",
+					"sid": 322208735345586
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 753402054374538,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"true\"",
+						"selector": "\"#audio-status-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 234654780307639
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-platform-audio-enabled",
+					"objectClass": "PlaygamaBridge",
+					"sid": 616823666256774,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 196292807447072,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"false\"",
+						"selector": "\"#audio-status-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 257045088626948
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-platform-audio-state-changed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 482509233532499
+				}
+			],
+			"actions": [],
+			"sid": 672071795610733,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-platform-audio-enabled",
+							"objectClass": "PlaygamaBridge",
+							"sid": 144044194190561
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 269877038741864,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#audio-status-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 195949223914457
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-platform-audio-enabled",
+							"objectClass": "PlaygamaBridge",
+							"sid": 286554794537810,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 378365496431002,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"false\"",
+								"selector": "\"#audio-status-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 784908904788795
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 868445363599070,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 651445967115458,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 851973669154580
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 912466074134273,
+					"parameters": {
+						"id": "\"game-ready-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 693969045764800,
+					"parameters": {
+						"message": "game-ready"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 839579321698123,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Game Ready\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 855898292028349
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 810799021972935,
+					"parameters": {
+						"id": "\"level-start-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 139585296629160,
+					"parameters": {
+						"message": "level-started"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 962228389739237,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Level Start\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 380435084792296
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 297543358957707,
+					"parameters": {
+						"id": "\"level-complete-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 402766368961689,
+					"parameters": {
+						"message": "level-completed"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 388476749677612,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Level Complete\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 685341303080182
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 272245361176544,
+					"parameters": {
+						"id": "\"level-fail-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 890853210676632,
+					"parameters": {
+						"message": "level-failed"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 184303749849430,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Level Fail\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 170384198760429
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 848000341007784,
+					"parameters": {
+						"id": "\"player-achievement-send-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 656532524707388,
+					"parameters": {
+						"message": "player-got-achievement"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 369033917144058,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Player Got Achievement\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 347712989760901
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 204588291311989,
+					"parameters": {
+						"id": "\"level-pause-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 106827999624710,
+					"parameters": {
+						"message": "level-paused"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 517417302088505,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Level Paused\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 524498905080196
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 686168454063829,
+					"parameters": {
+						"id": "\"level-resume-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-message",
+					"objectClass": "PlaygamaBridge",
+					"sid": 193609673555858,
+					"parameters": {
+						"message": "level-resumed"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 504203300204168,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Level Resumed\"",
+						"selector": "\"#all-games-data-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 384548145180246
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 337957490422467,
+					"parameters": {
+						"id": "\"get-time-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-server-time",
+					"objectClass": "PlaygamaBridge",
+					"sid": 660837968436414
+				}
+			],
+			"sid": 896814342124246
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-get-server-time-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 934861758488024
+				}
+			],
+			"actions": [],
+			"sid": 316973486485431,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-server-time",
+							"objectClass": "PlaygamaBridge",
+							"sid": 215665398004752
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 620996861101250,
+							"parameters": {
+								"content-type": "html",
+								"string": "Date.ToString(PlaygamaBridge.ServerTime)",
+								"selector": "\"#server-time-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 227817255191250
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-platform-get-all-games-supported",
+					"objectClass": "PlaygamaBridge",
+					"sid": 965639199140016
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 936743466284769,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"true\"",
+						"selector": "\"#get-all-games-support-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 512472845989060
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 969056187347396,
+					"parameters": {
+						"id": "\"get-all-games-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-all-games",
+					"objectClass": "PlaygamaBridge",
+					"sid": 349302714987990
+				}
+			],
+			"sid": 657467374894556
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-get-all-games-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 103925318335146
+				}
+			],
+			"actions": [],
+			"sid": 580822535844894,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 634091363206742,
+							"parameters": {
+								"first-value": "PlaygamaBridge.PlatformAllGamesCount",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 198995172951660,
+							"parameters": {
+								"type": "log",
+								"message": "\"Get all games completed\""
+							}
+						},
+						{
+							"id": "set-array",
+							"objectClass": "JSON",
+							"sid": 590542513695370,
+							"parameters": {
+								"path": "\"games\"",
+								"size": "0"
+							}
+						}
+					],
+					"sid": 180001681901715,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 792545538571662,
+									"parameters": {
+										"name": "\"items\"",
+										"start-index": "0",
+										"end-index": "PlaygamaBridge.PlatformAllGamesCount-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "push-value",
+									"objectClass": "JSON",
+									"sid": 344094570431305,
+									"parameters": {
+										"where": "back",
+										"path": "\"games\"",
+										"value": "loopindex"
+									}
+								},
+								{
+									"id": "set-object",
+									"objectClass": "JSON",
+									"sid": 744503225760127,
+									"parameters": {
+										"path": "\"games.\"&loopindex"
+									}
+								},
+								{
+									"id": "set-path",
+									"objectClass": "JSON",
+									"sid": 625889198507923,
+									"parameters": {
+										"path": "\"games.\"&loopindex"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON",
+									"sid": 572494821283970,
+									"parameters": {
+										"path": "\".appID\"",
+										"value": "PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"items\"), \"appID\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON",
+									"sid": 594798434236934,
+									"parameters": {
+										"path": "\".title\"",
+										"value": "PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"items\"), \"title\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON",
+									"sid": 279035174364790,
+									"parameters": {
+										"path": "\".coverURL\"",
+										"value": "PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"items\"), \"coverURL\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON",
+									"sid": 150959786791872,
+									"parameters": {
+										"path": "\".iconURL\"",
+										"value": "PlaygamaBridge.PlatformAllGamesPropertyValue(loopindex(\"items\"), \"iconURL\")"
+									}
+								}
+							],
+							"sid": 771031647460612
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 376854342959722,
+							"parameters": {
+								"first-value": "PlaygamaBridge.PlatformAllGamesCount",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 908846978824439,
+							"parameters": {
+								"type": "log",
+								"message": "JSON.ToBeautifiedString"
+							}
+						},
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 957739291588677,
+							"parameters": {
+								"content-type": "html",
+								"string": "JSON.ToBeautifiedString",
+								"selector": "\"#all-games-data-label\"",
+								"type": "one"
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 105225010477568,
+							"parameters": {
+								"path": "\"games\""
+							}
+						}
+					],
+					"sid": 469087340703264
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-platform-get-game-by-id-supported",
+					"objectClass": "PlaygamaBridge",
+					"sid": 511541052653991
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 298894816565584,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"true\"",
+						"selector": "\"#get-game-by-id-support-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 630230358687670
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 638236431301707,
+					"parameters": {
+						"id": "\"get-game-by-id-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 616808949925412,
+					"parameters": {
+						"key": "\"gameId\"",
+						"value": "int(Browser.ExecJS(\"document.getElementById('game-id-input').value\"))"
+					}
+				},
+				{
+					"id": "get-game-by-id",
+					"objectClass": "PlaygamaBridge",
+					"sid": 661373887010639
+				}
+			],
+			"sid": 550216228535600
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-get-game-by-id-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 609782821427154
+				}
+			],
+			"actions": [],
+			"sid": 857225836407532,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 334562971653195
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 398865147119177,
+							"parameters": {
+								"path": "\"appID\"",
+								"value": "PlaygamaBridge.PlatformGameByIdPropertyValue(\"appID\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 551226772850128,
+							"parameters": {
+								"path": "\"title\"",
+								"value": "PlaygamaBridge.PlatformGameByIdPropertyValue( \"title\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 469193746463391,
+							"parameters": {
+								"path": "\"url\"",
+								"value": " PlaygamaBridge.PlatformGameByIdPropertyValue(\"url\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 573936302365761,
+							"parameters": {
+								"path": "\"coverURL\"",
+								"value": " PlaygamaBridge.PlatformGameByIdPropertyValue(\"coverURL\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 916809145005768,
+							"parameters": {
+								"path": "\"iconURL\"",
+								"value": "PlaygamaBridge.PlatformGameByIdPropertyValue(\"iconURL\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 125719730178824,
+							"parameters": {
+								"path": "\"isAvailable\"",
+								"value": "PlaygamaBridge.PlatformGameByIdPropertyValue(\"isAvailable\")"
+							}
+						},
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 739206189853168,
+							"parameters": {
+								"content-type": "html",
+								"string": "JSON.ToBeautifiedString",
+								"selector": "\"#all-games-data-label\"",
+								"type": "one"
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 802102315655639,
+							"parameters": {
+								"path": "\"appID\""
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 543112416809341,
+							"parameters": {
+								"path": "\"title\""
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 533253893137309,
+							"parameters": {
+								"path": "\"url\""
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 346783380812435,
+							"parameters": {
+								"path": "\"coverURL\""
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 811038391045169,
+							"parameters": {
+								"path": "\"iconURL\""
+							}
+						},
+						{
+							"id": "delete-key",
+							"objectClass": "JSON",
+							"sid": 491190433514632,
+							"parameters": {
+								"path": "\"isAvailable\""
+							}
+						}
+					],
+					"sid": 664227321582106
+				}
+			]
+		}
+	],
+	"sid": 924149311301498
+}

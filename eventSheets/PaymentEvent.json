@@ -1,0 +1,667 @@
+{
+	"name": "PaymentEvent",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 144581835431803
+				}
+			],
+			"actions": [],
+			"sid": 214539270760406,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-payments-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 470275767393607
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 936064215360321,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#payments-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 608358955761803
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 426832438137433,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 932674911441023,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 984952562069310
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 962894898354903,
+					"parameters": {
+						"id": "\"purchase-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "payments-purchase",
+					"objectClass": "PlaygamaBridge",
+					"sid": 348972782170115,
+					"parameters": {
+						"id": "Browser.ExecJS(\"document.getElementById('product-id-input').value\")"
+					}
+				}
+			],
+			"sid": 557297203966492
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-payments-purchase-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 283697812463756
+				}
+			],
+			"actions": [],
+			"sid": 873088709580981,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 278392522209184
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 184164607208648,
+							"parameters": {
+								"type": "log",
+								"message": "\"purchase completed\""
+							}
+						},
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 710477732930641,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"Purchase completed. productid:\"&PlaygamaBridge.PaymentsLastPurchasePropertyValue(\"id\")",
+								"selector": "\"#payments-data-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 854658089980250
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 552641420919852,
+					"parameters": {
+						"id": "\"consume-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "payments-consume-purchase",
+					"objectClass": "PlaygamaBridge",
+					"sid": 693408955604644,
+					"parameters": {
+						"id": "Browser.ExecJS(\"document.getElementById('product-id-input1').value\")"
+					}
+				}
+			],
+			"sid": 847346595314176
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-payments-consume-purchase-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 426889437630224
+				}
+			],
+			"actions": [],
+			"sid": 874562022738147,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 955490205484135
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 702692602489621,
+							"parameters": {
+								"type": "log",
+								"message": "\"consume completed\""
+							}
+						},
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 318145383759162,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"Consume completed. productid:\"&PlaygamaBridge.PaymentsLastPurchasePropertyValue(\"id\")",
+								"selector": "\"#payments-data-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 803193209774849
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 156237518904759,
+					"parameters": {
+						"id": "\"get-catalog-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "payments-get-catalog",
+					"objectClass": "PlaygamaBridge",
+					"sid": 819881055725992
+				}
+			],
+			"sid": 593400691066405
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-payments-get-catalog-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 638403270121034
+				}
+			],
+			"actions": [],
+			"sid": 924434050579314,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 297625449450297
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 215173790211089,
+							"parameters": {
+								"type": "log",
+								"message": "\"get catalog completed\""
+							}
+						}
+					],
+					"sid": 493389362745721,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 588734918466821,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsCatalogItemsCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-array",
+									"objectClass": "JSON",
+									"sid": 412311172934083,
+									"parameters": {
+										"path": "\"catalog\"",
+										"size": "0"
+									}
+								}
+							],
+							"sid": 556264436212400,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 992952224981464,
+											"parameters": {
+												"name": "\"items\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.PaymentsCatalogItemsCount - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "push-value",
+											"objectClass": "JSON",
+											"sid": 879784603439121,
+											"parameters": {
+												"where": "back",
+												"path": "\"catalog\"",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "set-object",
+											"objectClass": "JSON",
+											"sid": 104043130312943,
+											"parameters": {
+												"path": "\"catalog.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-path",
+											"objectClass": "JSON",
+											"sid": 559716938501658,
+											"parameters": {
+												"path": "\"catalog.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 174581429157433,
+											"parameters": {
+												"path": "\".id\"",
+												"value": "PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"id\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 650911115804409,
+											"parameters": {
+												"path": "\".price\"",
+												"value": "PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"price\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 530455003663940,
+											"parameters": {
+												"path": "\".priceCurrencyCode\"",
+												"value": "PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceCurrencyCode\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 683592994879800,
+											"parameters": {
+												"path": "\".priceValue\"",
+												"value": "PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"priceValue\")"
+											}
+										}
+									],
+									"sid": 677914823754394
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 380222111781351,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsCatalogItemsCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-content",
+									"objectClass": "HTMLElement",
+									"sid": 165655829966356,
+									"parameters": {
+										"content-type": "html",
+										"string": "JSON.ToBeautifiedString",
+										"selector": "\"#payments-data-label\"",
+										"type": "one"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 465088104408699,
+									"parameters": {
+										"path": "\"catalog\""
+									}
+								}
+							],
+							"sid": 519807575061528
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 718663175153234,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsCatalogItemsCount",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-content",
+									"objectClass": "HTMLElement",
+									"sid": 878592121418435,
+									"parameters": {
+										"content-type": "html",
+										"string": "\"No product\"",
+										"selector": "\"#payments-data-label\"",
+										"type": "one"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 467429008758716,
+									"parameters": {
+										"path": "\"catalog\""
+									}
+								}
+							],
+							"sid": 503259110457517
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 337694779581077,
+					"parameters": {
+						"id": "\"get-purchase-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "payments-get-purchases",
+					"objectClass": "PlaygamaBridge",
+					"sid": 189671256105229
+				}
+			],
+			"sid": 536633419515563
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-payments-get-purchases-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 922730860460398
+				}
+			],
+			"actions": [],
+			"sid": 900036433766371,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 214656775063010
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 971268284837200,
+							"parameters": {
+								"type": "log",
+								"message": "\"get purchases completed\""
+							}
+						}
+					],
+					"sid": 489679854772932,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 221626118429258,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsPurchasesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-array",
+									"objectClass": "JSON",
+									"sid": 207837605850532,
+									"parameters": {
+										"path": "\"purchases\"",
+										"size": "0"
+									}
+								}
+							],
+							"sid": 108434838181360,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 614515287647487,
+											"parameters": {
+												"name": "\"item\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.PaymentsPurchasesCount - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "push-value",
+											"objectClass": "JSON",
+											"sid": 484805263009348,
+											"parameters": {
+												"where": "back",
+												"path": "\"purchases\"",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "set-object",
+											"objectClass": "JSON",
+											"sid": 472831033698057,
+											"parameters": {
+												"path": "\"purchases.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-path",
+											"objectClass": "JSON",
+											"sid": 943571685899514,
+											"parameters": {
+												"path": "\"purchases.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 184975852046224,
+											"parameters": {
+												"path": "\".id\"",
+												"value": "PlaygamaBridge.PaymentsPurchasePropertyValue(loopindex(\"item\"), \"id\")"
+											}
+										}
+									],
+									"sid": 330478049943681
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 749444075648807,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsPurchasesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-content",
+									"objectClass": "HTMLElement",
+									"sid": 231981157181816,
+									"parameters": {
+										"content-type": "html",
+										"string": "JSON.ToBeautifiedString",
+										"selector": "\"#payments-data-label\"",
+										"type": "one"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 687486521289799,
+									"parameters": {
+										"path": "\"purchases\""
+									}
+								}
+							],
+							"sid": 757183307195741
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 192102960796626,
+									"parameters": {
+										"first-value": "PlaygamaBridge.PaymentsPurchasesCount",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-content",
+									"objectClass": "HTMLElement",
+									"sid": 945606025965538,
+									"parameters": {
+										"content-type": "html",
+										"string": "\"No purchases\"",
+										"selector": "\"#payments-data-label\"",
+										"type": "one"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 434149296645352,
+									"parameters": {
+										"path": "\"purchases\""
+									}
+								}
+							],
+							"sid": 637008192847484
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 113830947338364
+}

@@ -1,0 +1,54 @@
+{
+	"name": "DeviceEvent",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 634880796349314
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 880039798997685,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.DeviceType",
+						"selector": "\"#device-type-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 736842438586887
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 640327837306104,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 559203168271037,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 651607520967064
+		}
+	],
+	"sid": 667850342242677
+}
