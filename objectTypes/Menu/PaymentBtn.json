@@ -1,0 +1,109 @@
+{
+	"name": "PaymentBtn",
+	"plugin-id": "Sprite",
+	"sid": 762661066862461,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 219,
+						"height": 81,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 989719,
+						"collisionPoly": {
+							"points": [
+								0.0365296803652968,
+								0,
+								0.9726027397260274,
+								0.012345679012345678,
+								0.9908675799086758,
+								0.06172839506172839,
+								1,
+								0.1111111111111111,
+								0.9954337899543378,
+								0.9259259259259259,
+								0.9634703196347032,
+								1,
+								0.0091324200913242,
+								0.9506172839506173,
+								0,
+								0.9012345679012346,
+								0,
+								0.09876543209876543
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 618824642345858,
+				"name": "Normal",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 219,
+						"height": 81,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9939801,
+						"collisionPoly": {
+							"points": [
+								0.0365296803652968,
+								0,
+								0.9726027397260274,
+								0.012345679012345678,
+								0.9908675799086758,
+								0.06172839506172839,
+								1,
+								0.1111111111111111,
+								0.9954337899543378,
+								0.9259259259259259,
+								0.9634703196347032,
+								1,
+								0.0091324200913242,
+								0.9506172839506173,
+								0,
+								0.9012345679012346,
+								0,
+								0.09876543209876543
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 406421248435690,
+				"name": "Hover",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

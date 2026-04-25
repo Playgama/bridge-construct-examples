@@ -1,0 +1,10 @@
+{
+	"name": "AllGamesDataLabel",
+	"plugin-id": "Text",
+	"sid": 225945225500536,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

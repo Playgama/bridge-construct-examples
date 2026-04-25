@@ -1,0 +1,10 @@
+{
+	"name": "RewardPlacementLabel",
+	"plugin-id": "Text",
+	"sid": 269852013784344,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

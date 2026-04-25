@@ -1,0 +1,9 @@
+{
+	"name": "LeaderboardId2Input",
+	"plugin-id": "TextBox",
+	"sid": 977608835763828,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": []
+}

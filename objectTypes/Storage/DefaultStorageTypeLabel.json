@@ -1,0 +1,10 @@
+{
+	"name": "DefaultStorageTypeLabel",
+	"plugin-id": "Text",
+	"sid": 750362126064422,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

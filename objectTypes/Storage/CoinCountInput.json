@@ -1,0 +1,9 @@
+{
+	"name": "CoinCountInput",
+	"plugin-id": "TextBox",
+	"sid": 502671568115181,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": []
+}

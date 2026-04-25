@@ -1,0 +1,10 @@
+{
+	"name": "AudioStateLabel",
+	"plugin-id": "Text",
+	"sid": 207005050961454,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

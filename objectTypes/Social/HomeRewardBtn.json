@@ -1,0 +1,105 @@
+{
+	"name": "HomeRewardBtn",
+	"plugin-id": "Sprite",
+	"sid": 241294506339446,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 190,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3128700,
+						"collisionPoly": {
+							"points": [
+								0.05789473684210526,
+								0,
+								0.9421052631578948,
+								0,
+								0.9631578947368421,
+								0.0625,
+								0.9631578947368421,
+								0.9375,
+								0.9421052631578948,
+								1,
+								0.05789473684210526,
+								1,
+								0.03684210526315789,
+								0.9375,
+								0.03684210526315789,
+								0.0625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 264620517908378,
+				"name": "Normal",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 190,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6582597,
+						"collisionPoly": {
+							"points": [
+								0.05789473684210526,
+								0,
+								0.9421052631578948,
+								0,
+								0.9631578947368421,
+								0.0625,
+								0.9631578947368421,
+								0.9375,
+								0.9421052631578948,
+								1,
+								0.05789473684210526,
+								1,
+								0.03684210526315789,
+								0.9375,
+								0.03684210526315789,
+								0.0625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 958237638730836,
+				"name": "Hover",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

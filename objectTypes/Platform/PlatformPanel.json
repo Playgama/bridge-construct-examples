@@ -1,0 +1,52 @@
+{
+	"name": "PlatformPanel",
+	"plugin-id": "Sprite",
+	"sid": 955234511410547,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 680,
+						"height": 1064,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6443352,
+						"collisionPoly": {
+							"points": [
+								0.016176470588235296,
+								0,
+								1,
+								0.010338345864661654,
+								0.9838235294117647,
+								1,
+								0,
+								0.9896616541353384
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 199642857647886,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

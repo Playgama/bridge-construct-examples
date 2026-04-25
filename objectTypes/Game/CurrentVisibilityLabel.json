@@ -1,0 +1,10 @@
+{
+	"name": "CurrentVisibilityLabel",
+	"plugin-id": "Text",
+	"sid": 456337961820475,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

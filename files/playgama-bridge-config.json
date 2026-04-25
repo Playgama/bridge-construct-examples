@@ -1,0 +1,36 @@
+{
+  "advertisement": {
+    "useBuiltInErrorPopup": true,
+    "interstitial": {
+      "placementFallback": "interstitial",
+      "preloadOnStart": true
+    },
+    "rewarded": {
+      "placementFallback": "reward",
+      "preloadOnStart": true
+    }
+  },
+  "payments": [
+    {
+      "id": "com.playgama.productid",
+      "qa_tool": {
+        "amount": 10
+      }
+    }
+  ],
+  "leaderboards": [
+    {
+      "id": "playgama",
+      "isMain": true,
+      "qa_tool": "playgama"
+    }
+  ],
+  "sendAnalyticsEvents": true,
+  "showFullLoadingLogo": true,
+  "device": {
+    "useBuiltInOrientationPopup": true,
+    "supportedOrientations": [
+      "landscape"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"name": "LeaderboardDataLabel",
+	"plugin-id": "Text",
+	"sid": 568866599624359,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}
