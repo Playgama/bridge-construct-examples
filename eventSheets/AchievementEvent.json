@@ -65,9 +65,9 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-achievements-get-list-supported",
+							"id": "is-achievements-native-popup-supported",
 							"objectClass": "PlaygamaBridge",
-							"sid": 518332838187254
+							"sid": 204488306185461
 						}
 					],
 					"actions": [
@@ -455,9 +455,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 438359230871857,
+									"sid": 530779394057018,
 									"parameters": {
-										"first-value": "PlaygamaBridge.LeaderboardEntriesCount",
+										"first-value": "PlaygamaBridge.AchievementsCount",
 										"comparison": 4,
 										"second-value": "0"
 									}

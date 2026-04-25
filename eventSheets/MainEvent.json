@@ -7,30 +7,6 @@
 				{
 					"id": "on-clicked-id",
 					"objectClass": "HTMLElement",
-					"sid": 849281839391345,
-					"parameters": {
-						"id": "\"payments-btn\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 645319945746060,
-					"parameters": {
-						"layout": "PaymentLayout"
-					}
-				}
-			],
-			"sid": 345983114518862
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-clicked-id",
-					"objectClass": "HTMLElement",
 					"sid": 168682331661486,
 					"parameters": {
 						"id": "\"platform-btn\""

@@ -535,9 +535,9 @@
 										{
 											"id": "for",
 											"objectClass": "System",
-											"sid": 441232199609688,
+											"sid": 614515287647487,
 											"parameters": {
-												"name": "\"purchases\"",
+												"name": "\"item\"",
 												"start-index": "0",
 												"end-index": "PlaygamaBridge.PaymentsPurchasesCount - 1"
 											}
@@ -573,10 +573,10 @@
 										{
 											"id": "set-value",
 											"objectClass": "JSON",
-											"sid": 561993264716665,
+											"sid": 184975852046224,
 											"parameters": {
 												"path": "\".id\"",
-												"value": "PlaygamaBridge.PaymentsCatalogItemPropertyValue(loopindex(\"items\"), \"id\")"
+												"value": "PlaygamaBridge.PaymentsPurchasePropertyValue(loopindex(\"item\"), \"id\")"
 											}
 										}
 									],
