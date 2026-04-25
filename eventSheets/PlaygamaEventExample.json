@@ -1879,9 +1879,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "InterstitialDelayLabel",
-							"sid": 369772004343567,
+							"sid": 175438966014991,
 							"parameters": {
-								"text": "\"60\""
+								"text": "PlaygamaBridge.MinimumDelayBetweenInterstitial"
 							}
 						},
 						{
