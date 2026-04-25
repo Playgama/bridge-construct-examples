@@ -1,5 +1,698 @@
 {
 	"name": "SocialEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 602901643576397
+				}
+			],
+			"actions": [],
+			"sid": 833486974595087,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-share-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 621100890874623
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 198899587328232,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#share-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 706292867873999
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-join-community-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 545453612083943
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 424575732276909,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#join-community-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 941944208785348
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-invite-friends-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 320477201358588
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 585023244954813,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#invite-friend-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 848166442036832
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-create-post-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 453376134248151
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 400089496368518,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#create-post-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 271256840370341
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-add-to-favorites-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 292358196981571
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 812423007585007,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#add-favour-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 647516493033214
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-add-to-home-screen-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 521511679543455
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 739114723134097,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#add-home-supported-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 797629317324516
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-rate-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 561966649746669
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 922450956472087,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#rate-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 644435297969418
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-external-links-allowed",
+							"objectClass": "PlaygamaBridge",
+							"sid": 916719412073445
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 909061341232541,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#external-link-allowed-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 349964732293569
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 579493449290911,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 502396003073708,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 691157677699355
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 879033544035089,
+					"parameters": {
+						"id": "\"share-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 141514781439963,
+					"parameters": {
+						"key": "\"text\"",
+						"value": "\"Ciao\""
+					}
+				},
+				{
+					"id": "share",
+					"objectClass": "PlaygamaBridge",
+					"sid": 255807922966581
+				}
+			],
+			"sid": 385762867861219
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-share-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 390959505915346
+				}
+			],
+			"actions": [],
+			"sid": 198067771834434,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 821330571788879
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 196690262751624,
+							"parameters": {
+								"type": "log",
+								"message": "\"Share successfully\""
+							}
+						}
+					],
+					"sid": 638547864265643
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 333459959460664,
+					"parameters": {
+						"id": "\"join-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 663739838643923,
+					"parameters": {
+						"key": "\"groupId\"",
+						"value": "\"EXAMPLE_ID\""
+					}
+				},
+				{
+					"id": "join-community",
+					"objectClass": "PlaygamaBridge",
+					"sid": 753392549986569
+				}
+			],
+			"sid": 422107288103258
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-join-community-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 232105292474590
+				}
+			],
+			"actions": [],
+			"sid": 456378153114938,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 792969083427968
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 899148450824614,
+							"parameters": {
+								"type": "log",
+								"message": "\"Join community successfully\""
+							}
+						}
+					],
+					"sid": 689905161041267
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 493036153275830,
+					"parameters": {
+						"id": "\"invite-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 170120890962560,
+					"parameters": {
+						"key": "\"text\"",
+						"value": "\"Ciao\""
+					}
+				},
+				{
+					"id": "invite-friends",
+					"objectClass": "PlaygamaBridge",
+					"sid": 138431833212855
+				}
+			],
+			"sid": 151219264467976
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-invite-friends-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 228163691514543
+				}
+			],
+			"actions": [],
+			"sid": 973783664907240,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 856650865046898
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 170015436771167,
+							"parameters": {
+								"type": "log",
+								"message": "\"Invite friends successfully\""
+							}
+						}
+					],
+					"sid": 352862710641661
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 789429726861025,
+					"parameters": {
+						"id": "\"create-post-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 758025833288020,
+					"parameters": {
+						"key": "\"media.0.type\"",
+						"value": "\"text\""
+					}
+				},
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 977302931178258,
+					"parameters": {
+						"key": "\"media.0.text\"",
+						"value": "\"Example Website\""
+					}
+				},
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 185398382491712,
+					"parameters": {
+						"key": "\"media.1.type\"",
+						"value": "\"link\""
+					}
+				},
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 816702620860930,
+					"parameters": {
+						"key": "\"media.1.url\"",
+						"value": "\"https://example.com/\""
+					}
+				},
+				{
+					"id": "create-post",
+					"objectClass": "PlaygamaBridge",
+					"sid": 582662097360770
+				}
+			],
+			"sid": 180431636630406
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-create-post-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 836456383041393
+				}
+			],
+			"actions": [],
+			"sid": 604094103886440,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 670250099865408
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 937896199150291,
+							"parameters": {
+								"type": "log",
+								"message": "\"Create post successfully\""
+							}
+						}
+					],
+					"sid": 474873626572513
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 215168051725735,
+					"parameters": {
+						"id": "\"add-favourites-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-favorites",
+					"objectClass": "PlaygamaBridge",
+					"sid": 488844243983704
+				}
+			],
+			"sid": 603786207947118
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-add-to-favorites-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 181685597209029
+				}
+			],
+			"actions": [],
+			"sid": 747572118761449,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 679624033163531
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 814854703524188,
+							"parameters": {
+								"type": "log",
+								"message": "\"Add favourites successfuly.\""
+							}
+						}
+					],
+					"sid": 237243388065636
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 922851055596648,
+					"parameters": {
+						"id": "\"add-home-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-home-screen",
+					"objectClass": "PlaygamaBridge",
+					"sid": 296510458419026
+				}
+			],
+			"sid": 740877417186945
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-add-to-home-screen-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 945407863186340
+				}
+			],
+			"actions": [],
+			"sid": 607102210644763,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 467963516465326
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 980548871135584,
+							"parameters": {
+								"type": "log",
+								"message": "\"Add home successfuly.\""
+							}
+						}
+					],
+					"sid": 314399606837919
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 905094067524401,
+					"parameters": {
+						"id": "\"rate-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "rate",
+					"objectClass": "PlaygamaBridge",
+					"sid": 913526403126425
+				}
+			],
+			"sid": 188803548067142
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-rate-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 212482867198159
+				}
+			],
+			"actions": [],
+			"sid": 522049176127423,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 101031055192115
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 291665404571371,
+							"parameters": {
+								"type": "log",
+								"message": "\"Rate completed\""
+							}
+						}
+					],
+					"sid": 259830742032163
+				}
+			]
+		}
+	],
 	"sid": 440884276594250
 }

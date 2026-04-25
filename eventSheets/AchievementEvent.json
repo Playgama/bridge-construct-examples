@@ -1,5 +1,550 @@
 {
 	"name": "AchievementEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 210461350418740
+				}
+			],
+			"actions": [],
+			"sid": 922061694517097,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-achievements-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 814896002175241
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 419175360198563,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#achivement-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 155246096837702
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-achievements-get-list-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 707765280261894
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 375970706022602,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#get-list-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 371811406757832
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-achievements-get-list-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 518332838187254
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 619492891061538,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#native-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 448010434646752
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 645381692541764,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 825700922337459,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 159054479658893
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 684201196929280,
+					"parameters": {
+						"id": "\"unlock-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 999876715052054,
+					"parameters": {
+						"key": "\"achievementkey\"",
+						"value": "Browser.ExecJS(\"document.getElementById('key-input').value\")"
+					}
+				},
+				{
+					"id": "add-action-parameter",
+					"objectClass": "PlaygamaBridge",
+					"sid": 906591525560578,
+					"parameters": {
+						"key": "\"achievement\"",
+						"value": "Browser.ExecJS(\"document.getElementById('name-input').value\")"
+					}
+				},
+				{
+					"id": "achievements-unlock",
+					"objectClass": "PlaygamaBridge",
+					"sid": 921072982092308
+				}
+			],
+			"sid": 681319170075339
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-achievements-unlock-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 396572040019193
+				}
+			],
+			"actions": [],
+			"sid": 574188968562672,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 630468556329064
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 200509094380270,
+							"parameters": {
+								"type": "log",
+								"message": "\"unlock achievement\""
+							}
+						}
+					],
+					"sid": 241927749376494
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 471760775170955,
+					"parameters": {
+						"id": "\"get-list-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "achievements-get-list",
+					"objectClass": "PlaygamaBridge",
+					"sid": 578901486200969
+				}
+			],
+			"sid": 418708389938922
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-achievements-get-list-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 761056841412243
+				}
+			],
+			"actions": [],
+			"sid": 877226390696475,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 881408428015298
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 477287061513427,
+							"parameters": {
+								"type": "log",
+								"message": "\"Get list completed\""
+							}
+						}
+					],
+					"sid": 908052465045251,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 734807391439861,
+									"parameters": {
+										"first-value": "PlaygamaBridge.AchievementsCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-array",
+									"objectClass": "JSON",
+									"sid": 308745660732845,
+									"parameters": {
+										"path": "\"achievements\"",
+										"size": "0"
+									}
+								}
+							],
+							"sid": 546778627598148,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 627940749052423,
+											"parameters": {
+												"name": "\"items\"",
+												"start-index": "0",
+												"end-index": "PlaygamaBridge.AchievementsCount-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "push-value",
+											"objectClass": "JSON",
+											"sid": 952379320465445,
+											"parameters": {
+												"where": "back",
+												"path": "\"achievements\"",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "set-object",
+											"objectClass": "JSON",
+											"sid": 577932971184621,
+											"parameters": {
+												"path": "\"achievements.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-path",
+											"objectClass": "JSON",
+											"sid": 221055519754885,
+											"parameters": {
+												"path": "\"achievements.\"&loopindex"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 959285736702578,
+											"parameters": {
+												"path": "\".id\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"achievementid\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 425745593178148,
+											"parameters": {
+												"path": "\".achievement\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"achievement\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 345457939602285,
+											"parameters": {
+												"path": "\".achievementkey\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"achievementkey\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 211657811044840,
+											"parameters": {
+												"path": "\".description\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"description\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 797758241478205,
+											"parameters": {
+												"path": "\".icon\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"icon\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 847398088588243,
+											"parameters": {
+												"path": "\".difficulty\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"difficulty\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 690157832008850,
+											"parameters": {
+												"path": "\".secret\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"secret\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 946901418136437,
+											"parameters": {
+												"path": "\".awarded\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"awarded\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 349486258896602,
+											"parameters": {
+												"path": "\".game\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"game\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 377266825014800,
+											"parameters": {
+												"path": "\".link\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"link\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 760742427190014,
+											"parameters": {
+												"path": "\".playerid\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"playerid\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 265283218174367,
+											"parameters": {
+												"path": "\".playername\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"playername\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 237865181135392,
+											"parameters": {
+												"path": "\".lastupdated\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"lastupdated\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 417661451088076,
+											"parameters": {
+												"path": "\".date\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"date\")"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON",
+											"sid": 802770241472021,
+											"parameters": {
+												"path": "\".rdate\"",
+												"value": "PlaygamaBridge.AchievementPropertyValue(loopindex(\"items\"), \"rdate\")"
+											}
+										}
+									],
+									"sid": 834579798890238
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 438359230871857,
+									"parameters": {
+										"first-value": "PlaygamaBridge.LeaderboardEntriesCount",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 711205007952219,
+									"parameters": {
+										"type": "log",
+										"message": "JSON.ToBeautifiedString"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 510495691516932,
+									"parameters": {
+										"path": "\"achievements\""
+									}
+								}
+							],
+							"sid": 617626790051298
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 200225877195582,
+					"parameters": {
+						"id": "\"show-native-popup-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "achievements-show-native-popup",
+					"objectClass": "PlaygamaBridge",
+					"sid": 165960877913983
+				}
+			],
+			"sid": 660257843365451
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-achievements-show-native-popup-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 639828541899078
+				}
+			],
+			"actions": [],
+			"sid": 403684117844670,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 700715066226181
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 329231450382596,
+							"parameters": {
+								"type": "log",
+								"message": "\"Native Pop Up shown\""
+							}
+						}
+					],
+					"sid": 224822443993808
+				}
+			]
+		}
+	],
 	"sid": 194990941525343
 }

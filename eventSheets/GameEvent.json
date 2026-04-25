@@ -1,5 +1,100 @@
 {
 	"name": "GameEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 388246740105774
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ShowVisibilityState",
+					"sid": 676253020305915
+				}
+			],
+			"sid": 880093529866606
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 243122555554618,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 894448872521345,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 266686148516268
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-visibility-state-changed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 746649579212670
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ShowVisibilityState",
+					"sid": 226814799079489
+				}
+			],
+			"sid": 773422401185292
+		},
+		{
+			"functionName": "ShowVisibilityState",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 771320634585654,
+					"parameters": {
+						"content-type": "html",
+						"string": "Browser.ExecJS(\"document.getElementById('visibility-label').innerText\")",
+						"selector": "\"#last-visibility-label\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 633232507005060,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.VisibilityState",
+						"selector": "\"#visibility-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 603700770775896
+		}
+	],
 	"sid": 281371489202505
 }

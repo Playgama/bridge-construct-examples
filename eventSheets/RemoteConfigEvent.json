@@ -1,5 +1,161 @@
 {
 	"name": "RemoteConfigEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 388903675556331
+				}
+			],
+			"actions": [],
+			"sid": 429978563349516,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-remote-config-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 669298811732219
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 448093623343689,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#remote-support-status-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 575764988323621
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 562067406818433,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 878533335449154,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 270832562590694
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 878797287903997,
+					"parameters": {
+						"id": "\"get-remote-config-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "send-remote-config-get-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 451093877239362
+				}
+			],
+			"sid": 433816226108308
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-remote-config-got-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 979672252630395
+				}
+			],
+			"actions": [],
+			"sid": 547340389763975,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 430413084052935
+						}
+					],
+					"actions": [],
+					"sid": 491069690812282,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-remote-config-value",
+									"objectClass": "PlaygamaBridge",
+									"sid": 200333612078169,
+									"parameters": {
+										"key": "\"playgama_key\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-value",
+									"objectClass": "JSON",
+									"sid": 315887385991978,
+									"parameters": {
+										"path": "\"playgama_key\"",
+										"value": "PlaygamaBridge.RemoteConfigValue(\"playgama_key\")"
+									}
+								},
+								{
+									"id": "set-content",
+									"objectClass": "HTMLElement",
+									"sid": 308220263689943,
+									"parameters": {
+										"content-type": "html",
+										"string": "JSON.ToBeautifiedString",
+										"selector": "\"#json-output-label\"",
+										"type": "one"
+									}
+								},
+								{
+									"id": "delete-key",
+									"objectClass": "JSON",
+									"sid": 646543883508702,
+									"parameters": {
+										"path": "\"playgama_key\""
+									}
+								}
+							],
+							"sid": 685329829740103
+						}
+					]
+				}
+			]
+		}
+	],
 	"sid": 277597006129129
 }

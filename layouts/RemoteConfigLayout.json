@@ -5,7 +5,64 @@
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Exported from Figma\">\n  <title>Exported Figma Design</title>\n  \n  <style>\n    /* Font Loading Optimized */\n    @font-face {\n      font-family: 'Geist Mono';\n      src: url('fonts/GeistMono-Regular.ttf') format('truetype');\n      font-weight: normal;\n      font-style: normal;\n      font-display: swap;\n    }\n\n    :root {\n      --font-family-geist-mono: 'Geist Mono', sans-serif;\n      --font-sans: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif;\n      --text-white: rgba(255, 255, 255, 0.8);\n      --text-accent: rgba(216, 187, 255, 1);\n      \n      /* Back button variables */\n      --bg-back-icon: #2a2a2e;\n      --text-muted: #8e8e93;\n    }\n\n    * {\n      margin: 0;\n      padding: 0;\n      box-sizing: border-box;\n    }\n\n    html, body {\n      width: 100%;\n      height: 100%;\n      background-color: rgba(13, 13, 15, 1) !important;\n    }\n\n    .text-white { color: var(--text-white); }\n    .text-accent { color: var(--text-accent); }\n\n    .app-container {\n      width: 100%;\n      min-height: 100%;\n      display: flex;\n      justify-content: center;\n      align-items: flex-start;\n      background-color: rgba(13, 13, 15, 1);\n    }\n\n    .main-content {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      padding: 16px 0;\n      width: 100%;\n      max-width: 680px; \n      background-color: rgba(13, 13, 15, 1);\n      align-self: stretch;\n    }\n\n    .app-header {\n      display: flex;\n      justify-content: space-between;\n      align-items: center;\n      gap: 8px;\n      padding: 12px 8px;\n      width: 100%;\n      background-color: rgba(13, 13, 15, 0.92);\n    }\n\n    .back-button {\n      display: flex;\n      align-items: center;\n      gap: 12px;\n      cursor: pointer;\n    }\n\n    .back-icon {\n      background-color: var(--bg-back-icon);\n      width: 46px; \n      height: 46px;\n      border-radius: 50%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      color: var(--text-muted);\n      transition: background-color 0.2s;\n    }\n\n    .back-button:hover .back-icon {\n      background-color: #38383e;\n    }\n\n    .back-label {\n      color: var(--text-muted);\n      font-family: var(--font-sans);\n      font-size: 20px; \n      font-weight: 500;\n    }\n\n    .btn {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: 6px;\n      padding: 9px 12px;\n    }\n\n    .btn-primary {\n      border-radius: 20px;\n      background-color: #9d50ff;\n      cursor: pointer;\n    }\n    .btn-primary:hover {\n      filter: brightness(1.1);\n    }\n\n    .btn-text {\n      text-align: center;\n      font-family: var(--font-family-geist-mono);\n      font-weight: 500;\n      font-size: 14px;\n    }\n\n    .content-section {\n      display: flex;\n      flex-direction: column;\n      justify-content: center;\n      gap: 4px;\n      padding: 0 8px;\n      width: 100%;\n      height: 100%;\n      align-self: stretch;\n    }\n\n    .main-card {\n      display: flex;\n      flex-direction: column;\n      gap: 12px;\n      padding: 12px;\n      background-color: rgba(41, 41, 46, 1);\n      border-radius: 12px;\n      width: 100%;\n      height: 100%;\n      align-self: stretch;\n    }\n\n    .card-header {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: 8px;\n      padding: 8px 0;\n      width: 96.38%;\n    }\n\n    .card-title {\n      flex-grow: 1;\n      font-family: var(--font-family-geist-mono);\n      font-weight: 500;\n      font-size: 18px;\n    }\n\n    .card-body {\n      display: flex;\n      flex-direction: column;\n      gap: 16px;\n      width: 100%;\n      height: 100%;\n      align-self: stretch;\n    }\n\n    .status-section {\n      display: flex;\n      flex-direction: column;\n      gap: 12px;\n      padding: 8px 0;\n    }\n\n    .status-text {\n      font-family: var(--font-family-geist-mono);\n      font-weight: normal;\n      font-size: 13px;\n    }\n\n    .action-group {\n      display: flex;\n      align-items: center;\n      gap: 8px;\n    }\n\n    .json-output {\n      display: flex;\n      flex-direction: column;\n      justify-content: top;\n      gap: 8px;\n      padding: 16px 12px;\n      width: 100%;\n      background-color: rgba(29, 29, 33, 1);\n      border-radius: 8px;\n      height: 100%;\n    }\n\n    .code-text {\n      font-family: var(--font-family-geist-mono);\n      font-weight: normal;\n      font-size: 13px;\n      line-height: 1.3;\n    }\n\n    @media (max-width: 1440px) {\n      .main-content {\n        padding-left: 24px;\n        padding-right: 24px;\n      }\n    }\n\n    @media (max-width: 768px) {\n      .main-content {\n        padding-left: 16px;\n        padding-right: 16px;\n      }\n    }\n  </style>\n</head>\n<body>\n\n<div class=\"app-container\">\n  <div class=\"main-content\">\n    <div class=\"app-header\">\n      \n      <div class=\"back-button\" id=\"back-btn\">\n        <div class=\"back-icon\">\n          <svg width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n            <polyline points=\"15 18 9 12 15 6\"></polyline>\n          </svg>\n        </div>\n        <span class=\"back-label\">Back</span>\n      </div>\n    </div>\n    \n    <div class=\"content-section\">\n      <div class=\"main-card\">\n        <div class=\"card-header\">\n          <p class=\"card-title\"><span class=\"text-white\">Remote Config</span></p>\n        </div>\n        <div class=\"card-body\">\n          <div class=\"status-section\">\n            <p class=\"status-text text-white\">Is Remote Config Supported: <span class=\"text-accent\" id=\"remote-support-status\">false</span></p>\n          </div>\n          <div class=\"action-group\">\n            <div class=\"btn btn-primary\" id=\"get-remote-config-btn\">\n              <p class=\"btn-text\"><span class=\"text-white\">Get</span></p>\n            </div>\n          </div>\n          <div class=\"json-output\">\n            <p class=\"code-text\"><span class=\"text-white\" id=\"json-output-label\">{<br>&nbsp;&nbsp;&nbsp;&nbsp;\"key_1\": \"value_1aaaaaaaaaaaaaaaaaaaa\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"key_2\": \"value_2\",<br>&nbsp;&nbsp;&nbsp;&nbsp;...<br>}</span></p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n</body>\n</html>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"set-background-color": true,
+						"default-background-color": [
+							0.050980392156862744,
+							0.050980392156862744,
+							0.058823529411764705,
+							1
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 3,
+					"sid": 583193804054722,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 583193804054722,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 682,
+						"height": 400,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
 			"sid": 832079208046501,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

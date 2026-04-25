@@ -1,5 +1,634 @@
 {
 	"name": "StorageEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 994982054220206
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "UpdateStatus",
+					"sid": 156358687575633
+				}
+			],
+			"sid": 191433968448976
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 487147090151583,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 882488548064259,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 761418002059293
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 968082208117940,
+					"parameters": {
+						"id": "\"load-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-storage-data-get-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 822189807037543,
+					"parameters": {
+						"key": "\"coin\""
+					}
+				},
+				{
+					"id": "append-storage-data-get-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 487155084722906,
+					"parameters": {
+						"key": "\"level\""
+					}
+				}
+			],
+			"sid": 673643206706802,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 479431849391122,
+							"parameters": {
+								"first-value": "Browser.ExecJS(\"document.querySelector('input[name=\"\"storage_selection\"\"]:checked').value\")",
+								"comparison": 0,
+								"second-value": "\"local\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-storage-data-get-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 829735258859040,
+							"parameters": {
+								"storage-type": "local-storage"
+							}
+						}
+					],
+					"sid": 729525657810132
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 894916075675011,
+							"parameters": {
+								"first-value": "Browser.ExecJS(\"document.querySelector('input[name=\"\"storage_selection\"\"]:checked').value\")",
+								"comparison": 0,
+								"second-value": "\"platform\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-storage-data-get-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 902688799480414,
+							"parameters": {
+								"storage-type": "platform-internal"
+							}
+						}
+					],
+					"sid": 762755907131606
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-storage-data-get-request-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 266834593075476
+				}
+			],
+			"actions": [],
+			"sid": 302651710633789,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-storage-data",
+							"objectClass": "PlaygamaBridge",
+							"sid": 355020956305201,
+							"parameters": {
+								"key": "\"coin\""
+							}
+						},
+						{
+							"id": "has-storage-data",
+							"objectClass": "PlaygamaBridge",
+							"sid": 327205392197155,
+							"parameters": {
+								"key": "\"level\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 539186069744739,
+							"parameters": {
+								"type": "log",
+								"message": "PlaygamaBridge.StorageData(\"coin\")"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 446514348804438,
+							"parameters": {
+								"type": "log",
+								"message": "PlaygamaBridge.StorageData(\"level\")"
+							}
+						}
+					],
+					"sid": 116052157253785
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 325770980063804,
+					"parameters": {
+						"id": "\"save-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-storage-data-set-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 906028085304142,
+					"parameters": {
+						"key": "\"coin\"",
+						"value": "Browser.ExecJS(\"document.getElementById('coin-count-input').value\")"
+					}
+				},
+				{
+					"id": "append-storage-data-set-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 128922377928827,
+					"parameters": {
+						"key": "\"level\"",
+						"value": "Browser.ExecJS(\"document.getElementById('level-id-input').value\")"
+					}
+				}
+			],
+			"sid": 167959298164083,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 303801296456510,
+							"parameters": {
+								"first-value": "Browser.ExecJS(\"document.querySelector('input[name=\"\"storage_selection\"\"]:checked').value\")",
+								"comparison": 0,
+								"second-value": "\"local\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-storage-data-set-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 444402255851783,
+							"parameters": {
+								"storage-type": "local-storage"
+							}
+						}
+					],
+					"sid": 640960144768875
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 652200580845252,
+							"parameters": {
+								"first-value": "Browser.ExecJS(\"document.querySelector('input[name=\"\"storage_selection\"\"]:checked').value\")",
+								"comparison": 0,
+								"second-value": "\"platform\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-storage-data-set-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 344676831526853,
+							"parameters": {
+								"storage-type": "platform-internal"
+							}
+						}
+					],
+					"sid": 612617378653826
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-storage-data-set-request-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 472257100828219
+				}
+			],
+			"actions": [],
+			"sid": 227761655390803,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 257988785619930
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 962989099677214,
+							"parameters": {
+								"type": "log",
+								"message": "\"Set data completed\""
+							}
+						},
+						{
+							"callFunction": "UpdateStatus",
+							"sid": 863281095188529
+						}
+					],
+					"sid": 269106072105020
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 728589740409633,
+					"parameters": {
+						"id": "\"delete-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-storage-data-delete-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 275531281131684,
+					"parameters": {
+						"key": "\"coin\""
+					}
+				},
+				{
+					"id": "append-storage-data-delete-request",
+					"objectClass": "PlaygamaBridge",
+					"sid": 563144030519836,
+					"parameters": {
+						"key": "\"level\""
+					}
+				}
+			],
+			"sid": 217965593526897,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 385663738325678,
+							"parameters": {
+								"first-value": "Browser.ExecJS(\"document.querySelector('input[name=\"\"storage_selection\"\"]:checked').value\")",
+								"comparison": 0,
+								"second-value": "\"local\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-storage-data-delete-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 227751290516096,
+							"parameters": {
+								"storage-type": "local-storage"
+							}
+						}
+					],
+					"sid": 708229098451522
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 114080378237267,
+							"parameters": {
+								"first-value": "Browser.ExecJS(\"document.querySelector('input[name=\"\"storage_selection\"\"]:checked').value\")",
+								"comparison": 0,
+								"second-value": "\"platform\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "send-storage-data-delete-request",
+							"objectClass": "PlaygamaBridge",
+							"sid": 876189926746313,
+							"parameters": {
+								"storage-type": "platform-internal"
+							}
+						}
+					],
+					"sid": 601626412256508
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-storage-data-delete-request-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 492284937103694
+				}
+			],
+			"actions": [],
+			"sid": 743412473119861,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 398752528499046
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 158801429213428,
+							"parameters": {
+								"type": "log",
+								"message": "\"Delete data completed\""
+							}
+						},
+						{
+							"callFunction": "UpdateStatus",
+							"sid": 795257999909163
+						}
+					],
+					"sid": 963621879894767
+				}
+			]
+		},
+		{
+			"functionName": "UpdateStatus",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 886164886368502,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.DefaultStorageType",
+						"selector": "\"#default-storage-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 339208261716426,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-storage-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 539883430505485,
+							"parameters": {
+								"storage-type": "local-storage"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 298912389731653,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#local-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 517935035215907
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-storage-available",
+							"objectClass": "PlaygamaBridge",
+							"sid": 821690833603064,
+							"parameters": {
+								"storage-type": "local-storage"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 906100200071770,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#local-available-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 484424518309380
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-storage-available",
+							"objectClass": "PlaygamaBridge",
+							"sid": 770461470620709,
+							"parameters": {
+								"storage-type": "local-storage"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 485202366300988,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"false\"",
+								"selector": "\"#local-available-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 259448181097205
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-storage-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 490416160983165,
+							"parameters": {
+								"storage-type": "platform-internal"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 363579148746770,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#platform-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 835204788276968
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-storage-available",
+							"objectClass": "PlaygamaBridge",
+							"sid": 784990184552647,
+							"parameters": {
+								"storage-type": "platform-internal"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 552035025616364,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#platform-available-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 618932024694705
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-storage-available",
+							"objectClass": "PlaygamaBridge",
+							"sid": 666574917976372,
+							"parameters": {
+								"storage-type": "platform-internal"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 872029020095435,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"false\"",
+								"selector": "\"#platform-available-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 429525927059610
+				}
+			]
+		}
+	],
 	"sid": 356120223595646
 }

@@ -15,8 +15,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "HTMLElement",
 			"name": "HTML Element",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -43,7 +57,9 @@
 			"PlaygamaBridge",
 			"Browser",
 			"HTMLElement",
-			"Mouse"
+			"Mouse",
+			"JSON",
+			"Date"
 		],
 		"subfolders": []
 	},
@@ -61,8 +77,8 @@
 			"GameLayout",
 			"DeviceLayout",
 			"PaymentLayout",
-			"LeaderboardLayout",
 			"StorageLayout",
+			"LeaderboardLayout",
 			"AdvertisementsLayout",
 			"SocialLayout",
 			"PlayerLayout",
@@ -106,7 +122,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "GeistMono-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 579371744779392,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
@@ -441,5 +466,5 @@
 	},
 	"viewportWidth": 680,
 	"viewportHeight": 400,
-	"firstLayout": null
+	"firstLayout": "MainLayout"
 }

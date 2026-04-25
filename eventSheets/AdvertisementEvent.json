@@ -1,5 +1,347 @@
 {
 	"name": "AdvertisementEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 902186163582309
+				}
+			],
+			"actions": [
+				{
+					"id": "set-minimum-delay-between-interstitial",
+					"objectClass": "PlaygamaBridge",
+					"sid": 380985780087989,
+					"parameters": {
+						"seconds": "60"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 424277092781422,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.MinimumDelayBetweenInterstitial&\"\"",
+						"selector": "\"#inter-delay-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 606871262473608,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-banner-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 829582410347899
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 564317983967715,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#banner-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 933202254066807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-interstitial-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 257424396245618
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 316660030819331,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#inter-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 928111149317478
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-rewarded-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 258487239309339
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 248270876394515,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#reward-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 220707918699331
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 915161541507644,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 281034378908373,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 429571008740030
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 680656315706574,
+					"parameters": {
+						"id": "\"show-banner-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "show-banner",
+					"objectClass": "PlaygamaBridge",
+					"sid": 910909286846719,
+					"parameters": {
+						"position": "bottom",
+						"placement": "\"banner\""
+					}
+				}
+			],
+			"sid": 515150319410723
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 820011211576999,
+					"parameters": {
+						"id": "\"hide-banner-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "hide-banner",
+					"objectClass": "PlaygamaBridge",
+					"sid": 906223091073519
+				}
+			],
+			"sid": 424344625471233
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-banner-state-changed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 527921050515240
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 624296614501695,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.BannerState",
+						"selector": "\"#last-banner-state-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 686692847820219
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 999511417693781,
+					"parameters": {
+						"id": "\"show-inter-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "show-interstitial",
+					"objectClass": "PlaygamaBridge",
+					"sid": 514356652120346,
+					"parameters": {
+						"placement": "\"interstitial\""
+					}
+				}
+			],
+			"sid": 146184569871360
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-interstitial-state-changed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 804307392410189
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 660392664107259,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.InterstitialState",
+						"selector": "\"#last-inter-state-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 265021377833375
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 837933294882881,
+					"parameters": {
+						"id": "\"show-reward-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "show-rewarded",
+					"objectClass": "PlaygamaBridge",
+					"sid": 636926590923774,
+					"parameters": {
+						"placement": "\"reward\""
+					}
+				}
+			],
+			"sid": 324734435309471
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-rewarded-state-changed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 126890258945416
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 300848727946439,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.RewardedState",
+						"selector": "\"#last-reward-state-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 551191430203071
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-rewarded-rewarded",
+					"objectClass": "PlaygamaBridge",
+					"sid": 314517550417843
+				}
+			],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 435387651416616,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.RewardedPlacement",
+						"selector": "\"#reward-placement-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 660116806622073
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 360838755953608,
+					"parameters": {
+						"id": "\"check-adblock-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-adblock",
+					"objectClass": "PlaygamaBridge",
+					"sid": 694652299274971
+				}
+			],
+			"sid": 498513057967028
+		}
+	],
 	"sid": 862452361619561
 }

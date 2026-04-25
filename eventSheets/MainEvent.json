@@ -1,5 +1,294 @@
 {
 	"name": "MainEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 849281839391345,
+					"parameters": {
+						"id": "\"payments-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 645319945746060,
+					"parameters": {
+						"layout": "PaymentLayout"
+					}
+				}
+			],
+			"sid": 345983114518862
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 168682331661486,
+					"parameters": {
+						"id": "\"platform-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 213650492020095,
+					"parameters": {
+						"layout": "PlatformLayout"
+					}
+				}
+			],
+			"sid": 580404799169809
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 846878914654499,
+					"parameters": {
+						"id": "\"storage-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 808346158917452,
+					"parameters": {
+						"layout": "StorageLayout"
+					}
+				}
+			],
+			"sid": 135278375069329
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 686110994988892,
+					"parameters": {
+						"id": "\"social-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 898334484290091,
+					"parameters": {
+						"layout": "SocialLayout"
+					}
+				}
+			],
+			"sid": 908569748778362
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 184114497228947,
+					"parameters": {
+						"id": "\"achievements-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 833744496560575,
+					"parameters": {
+						"layout": "AchievementLayout"
+					}
+				}
+			],
+			"sid": 518804087173693
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 741815944472848,
+					"parameters": {
+						"id": "\"device-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 821944539670914,
+					"parameters": {
+						"layout": "DeviceLayout"
+					}
+				}
+			],
+			"sid": 745116882537974
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 326955186279877,
+					"parameters": {
+						"id": "\"ads-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 354537717392595,
+					"parameters": {
+						"layout": "AdvertisementsLayout"
+					}
+				}
+			],
+			"sid": 110497859329730
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 178669163357638,
+					"parameters": {
+						"id": "\"leaderboards-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 897522955848519,
+					"parameters": {
+						"layout": "LeaderboardLayout"
+					}
+				}
+			],
+			"sid": 160638410364263
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 281082216565709,
+					"parameters": {
+						"id": "\"remote-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 925414409898127,
+					"parameters": {
+						"layout": "RemoteConfigLayout"
+					}
+				}
+			],
+			"sid": 165605735544154
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 347928314180717,
+					"parameters": {
+						"id": "\"game-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 493136836984946,
+					"parameters": {
+						"layout": "GameLayout"
+					}
+				}
+			],
+			"sid": 965937509068253
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 755381483810662,
+					"parameters": {
+						"id": "\"player-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 701988157840733,
+					"parameters": {
+						"layout": "PlayerLayout"
+					}
+				}
+			],
+			"sid": 691483753119938
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 671998983795371,
+					"parameters": {
+						"id": "\"payments-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 247052176166014,
+					"parameters": {
+						"layout": "PaymentLayout"
+					}
+				}
+			],
+			"sid": 371357819529829
+		}
+	],
 	"sid": 367847720303335
 }

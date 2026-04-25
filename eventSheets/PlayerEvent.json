@@ -1,5 +1,240 @@
 {
 	"name": "PlayerEvent",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 248485813657286
+				}
+			],
+			"actions": [],
+			"sid": 988307190025101,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-player-authorization-supported",
+							"objectClass": "PlaygamaBridge",
+							"sid": 418920788516074
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 311905257116084,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"true\"",
+								"selector": "\"#auth-support-label\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 516554788086936
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-player-authorized",
+							"objectClass": "PlaygamaBridge",
+							"sid": 384211712961351
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowPlayerData",
+							"sid": 706608359943846
+						}
+					],
+					"sid": 297282487920579
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 545269217724245,
+					"parameters": {
+						"id": "\"back-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 425798773231387,
+					"parameters": {
+						"layout": "\"MainLayout\""
+					}
+				}
+			],
+			"sid": 633905098952905
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked-id",
+					"objectClass": "HTMLElement",
+					"sid": 592046490737352,
+					"parameters": {
+						"id": "\"auth-btn\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "authorize-player",
+					"objectClass": "PlaygamaBridge",
+					"sid": 159786687529008
+				}
+			],
+			"sid": 329507383870484
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-authorize-player-completed",
+					"objectClass": "PlaygamaBridge",
+					"sid": 199867085740701
+				}
+			],
+			"actions": [],
+			"sid": 237955588836717,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-last-action-completed-successfully",
+							"objectClass": "PlaygamaBridge",
+							"sid": 332262283870146
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ShowPlayerData",
+							"sid": 313596418835636
+						}
+					],
+					"sid": 105863019483156
+				}
+			]
+		},
+		{
+			"functionName": "ShowPlayerData",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 526226168585819,
+					"parameters": {
+						"content-type": "html",
+						"string": "\"Authorized\"",
+						"selector": "\"#auth-status-label\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 361962971576004,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.PlayerId",
+						"selector": "\"#player-id-label\"",
+						"type": "one"
+					}
+				},
+				{
+					"id": "set-content",
+					"objectClass": "HTMLElement",
+					"sid": 602127811025249,
+					"parameters": {
+						"content-type": "html",
+						"string": "PlaygamaBridge.PlayerName",
+						"selector": "\"#player-name-label\"",
+						"type": "one"
+					}
+				}
+			],
+			"sid": 957066765852671,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "does-player-have-photo",
+							"objectClass": "PlaygamaBridge",
+							"sid": 337332816923395,
+							"parameters": {
+								"index": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 687545954665935,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"<img src=\"&PlaygamaBridge.PlayerPhoto(0)&\" alt=\"\"User Profile Picture\"\" class=\"\"avatar-img\"\"/>\"",
+								"selector": "\"#player-photo-image\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 283063510896890
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "does-player-have-photo",
+							"objectClass": "PlaygamaBridge",
+							"sid": 982483126013077,
+							"parameters": {
+								"index": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-content",
+							"objectClass": "HTMLElement",
+							"sid": 686646080755053,
+							"parameters": {
+								"content-type": "html",
+								"string": "\"<img src=\"&PlaygamaBridge.PlayerPhoto(1)&\" alt=\"\"User Profile Picture\"\" class=\"\"avatar-img\"\"/>\"",
+								"selector": "\"#player-photo-image1\"",
+								"type": "one"
+							}
+						}
+					],
+					"sid": 234128286330964
+				}
+			]
+		}
+	],
 	"sid": 274951648575149
 }
